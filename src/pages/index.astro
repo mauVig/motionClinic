@@ -1,0 +1,12 @@
+---
+import Objective from '@/components/Objective';
+import Welcome from '@/components/Welcome.astro';
+import Layout from '@/layouts/Layout.astro';
+import Experience from '@/components/Experience.astro';
+---
+
+<Layout>
+	<Welcome />
+	<Objective client:idle />
+	<Experience />
+</Layout>
