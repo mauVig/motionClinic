@@ -1,12 +1,20 @@
 ---
-import Objective from '@/components/Objective';
+import Objective from '@/components/Objective.astro';
 import Welcome from '@/components/Welcome.astro';
 import Layout from '@/layouts/Layout.astro';
 import Experience from '@/components/Experience.astro';
+import WhoIs from '@/components/WhoIs.astro';
+import HowWeDoIt from '@/components/HowWeDoIt.astro';
+import Information from '@/components/Information.astro';
+import Skills from '@/components/Skills.tsx';
 ---
 
 <Layout>
 	<Welcome />
-	<Objective client:idle />
+	<Objective  />
 	<Experience />
+	<WhoIs />
+	<HowWeDoIt />
+	<Information />
+	<Skills client:only/>
 </Layout>

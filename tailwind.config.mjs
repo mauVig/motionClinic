@@ -16,7 +16,8 @@ export default {
 			'grey': '#e8e8e8',
 			'violet': '#5b5bc4',
 			'purple': '#cfb1fb',
-			'backBlack': '#131313'
+			'backBlack': '#131313',
+			'black': '#000000',
 		}
 	},
 	plugins: [],
