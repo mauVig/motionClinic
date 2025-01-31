@@ -7,6 +7,9 @@ import WhoIs from '@/components/WhoIs.astro';
 import HowWeDoIt from '@/components/HowWeDoIt.astro';
 import Information from '@/components/Information.astro';
 import Skills from '@/components/Skills.tsx';
+import TestifyWrapp from '@/components/testify/TestifyWrapp.astro';
+import Contact from '@/components/Contact.astro';
+import Footer from '@/components/Footer.astro';
 ---
 
 <Layout>
@@ -17,4 +20,7 @@ import Skills from '@/components/Skills.tsx';
 	<HowWeDoIt />
 	<Information />
 	<Skills client:only/>
+	<TestifyWrapp  />
+	<Contact />
+	<Footer />
 </Layout>

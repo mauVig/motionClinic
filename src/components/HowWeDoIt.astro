@@ -1,17 +1,17 @@
-<section class=" relative overflow-hidden">
-    <iframe  
-      src="https://www.youtube.com/embed/KULGrLXNu3E?autoplay=1&mute=1&playsinline=1&controls=0&rel=0&enablejsapi=1"  
-      title="YouTube video player"  
-      frameborder="0"  
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-      loading="lazy"
-      class="rotate-video">
-    </iframe>
+<section class="relative overflow-hidden">
+  <iframe   
+    src="https://www.youtube.com/embed/KULGrLXNu3E?autoplay=1&mute=1&playsinline=1&rel=0&enablejsapi=1"   
+    title="YouTube video player"   
+    frameborder="0"   
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen 
+    loading="lazy" 
+    class="video-player"> 
+  </iframe>
 </section>
 
 <style>
-  .rotate-video {
+  .video-player {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -21,6 +21,15 @@
     object-fit: cover;
   }
 
+  /* Media query para pantallas mayores a 768px */
+  @media (width > 768px) {
+    .video-player {
+      transform: translate(-50%, -50%); /* Elimina la rotación */
+      min-width: 100vw;
+      min-height: 100vh;
+    }
+  }
+
   section {
     display: flex;
     justify-content: center;
@@ -28,14 +37,20 @@
     min-width: 100vw;
     min-height: 100vw;
   }
+
+  /* Ajuste para la altura de la sección en pantallas grandes */
+  @media (width >768px) {
+    section {
+      min-height: 100vh;
+    }
+  }
 </style>
 
 <script>
-    declare var YT: any;
-    document.addEventListener('DOMContentLoaded', function() {
-    const iframe = document.querySelector('.rotate-video');
+  declare var YT: any;
+  document.addEventListener('DOMContentLoaded', ()=> {
+    const iframe = document.querySelector('.video-player');
     
-    // Función para cargar la API de YouTube
     const loadYouTubeAPI = () => {
       const tag = document.createElement('script');
       tag.src = "https://www.youtube.com/iframe_api";
@@ -45,17 +60,16 @@
       }
     };
 
-    // Inicializar el reproductor cuando la API esté lista
     (window as any).onYouTubeIframeAPIReady = () => {
       new YT.Player(iframe, {
         events: {
           'onReady': (event: YT.PlayerEvent) => {
             event.target.playVideo();
-            event.target.mute(); // Asegurarse de que esté muteado para autoplay
+            event.target.mute(); // Mantiene el mute inicial para autoplay
           },
           'onStateChange': (event: YT.OnStateChangeEvent) => {
             if (event.data === YT.PlayerState.ENDED) {
-              event.target.playVideo(); // Reproducir de nuevo cuando termine
+              event.target.playVideo();
             }
           }
         }
