@@ -2,7 +2,17 @@
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
-		extend: {},
+		extend: {
+			keyframes: {
+				shine: {
+					'0%': { 'background-position': '100%' },
+					'100%': { 'background-position': '-100%' },
+				},
+			},
+			animation: {
+				shine: 'shine 5s linear infinite',
+			},
+		},
 		screens: {
 			'xs': '375px',
 			'mid':'475px',

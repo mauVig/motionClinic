@@ -12,7 +12,7 @@ import { EffectCube, Pagination } from 'swiper/modules';
 
 export const SlideTestify = () => {
     return (
-        <div className='overflow-hidden flex items-center'>
+        <div className=' flex items-center'>
             <Swiper
                 effect={'cube'}
                 grabCursor={true}
