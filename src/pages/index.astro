@@ -1,22 +1,22 @@
 ---
-import Objective from '@/components/objetiveText/Objective';
-import Welcome from '@/components/Welcome.astro';
+import Welcome from '@/components/Welcome.tsx';
 import Layout from '@/layouts/Layout.astro';
-import Information from '@/components/Information.astro';
+import Biography from '@/components/Biography';
 import Skills from '@/components/Skills.tsx';
 import TestifyWrapp from '@/components/testify/TestifyWrapp.astro';
 import Contact from '@/components/Contact.astro';
 import Footer from '@/components/Footer.astro';
-import WrapObjWhoIs from '@/components/backChange/WrapObjWhoIs';
-import HowWeDoIt from '@/components/HowWeDoIt.astro';
+import WrapChangeBack from '@/components/backChange/WrapChangeBac';
+import VideoPlayer from '@/components/VideoPlayer';
+import Gallery from '@/components/Gallery';
 ---
 
 <Layout>
-	<Welcome />
-	<Objective  client:only/>
-	<WrapObjWhoIs client:only/>
-	<HowWeDoIt />
-	<Information />
+	<Welcome  client:only/>
+	<WrapChangeBack client:only/>
+	<VideoPlayer client:only />
+	<Biography client:only/>
+	<Gallery client:only />
 	<Skills client:only/>
 	<TestifyWrapp  />
 	<Contact />

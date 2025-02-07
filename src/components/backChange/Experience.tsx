@@ -22,7 +22,7 @@ const ScrollSection: React.FC<ScrollSectionProps> = ({ className = '' }) => {
   }, []);
 
   const calculateTransform = (base: number): string => {
-    const moveAmount = (scrollY * 0.4); // Incrementado de 0.1 a 0.3
+    const moveAmount = (scrollY * 0.2); // Incrementado de 0.1 a 0.3
     return `translateY(${base - moveAmount}px)`;
   };
 
@@ -42,26 +42,26 @@ const ScrollSection: React.FC<ScrollSectionProps> = ({ className = '' }) => {
         <img 
           src="/img/clinic-cell.jpg" 
           alt="" 
-          className="h-60 absolute top-0 right-10 transition-transform duration-300"
+          className="h-28 mid:h-32 md:h-60 absolute top-0 right-10 transition-transform duration-300"
           style={{ transform: calculateTransform(0) }}
         />
         <img 
           src="/img/clinic2-cell.jpg" 
           alt="" 
-          className="h-60 absolute top-14 transition-transform duration-300"
-          style={{ transform: calculateTransform(100) }}  // Incrementado de 56 a 100
+          className="h-32 mid:h-32 md:h-60 absolute top-14 transition-transform duration-300"
+          style={{ transform: calculateTransform(100) }}  
         />
         <img 
           src="/img/clinic3-cell.jpg" 
           alt="" 
-          className="h-48 absolute bottom-12 right-12 transition-transform duration-300"
-          style={{ transform: calculateTransform(200) }}  // Incrementado de 100 a 200
+          className="h-28 mid:h-24 md:h-48 absolute bottom-12 right-12 transition-transform duration-300"
+          style={{ transform: calculateTransform(200) }} 
         />
         <img 
           src="/img/clinic4-cell.jpg" 
           alt="" 
-          className="h-72 absolute bottom-6 transition-transform duration-300"
-          style={{ transform: calculateTransform(300) }}  // Incrementado de 150 a 300
+          className="h-28 mid:h-48 md:h-72 absolute bottom-6 transition-transform duration-300"
+          style={{ transform: calculateTransform(300) }}  
         />
       </div>
     </section>

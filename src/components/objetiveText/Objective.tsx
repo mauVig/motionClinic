@@ -28,7 +28,7 @@ const RevealSection:React.FC = () => {
   }, []);
 // recuperar tu calidad de vida
   return (
-    <section className="bg-backBlack text-grey flex items-center px-6 py-36" id="reveal-section">
+    <section className=" text-grey flex items-center px-6 py-36" id="reveal-section">
       <div className="flex flex-col items-center justify-center w-full">
         <ShinyText disabled={false} speed={3} /> 
         <div className="text-6xl md:text-8xl text-purple mt-32 overflow-hidden">

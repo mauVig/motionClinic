@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import WhoIs from './WhoIs';
 import Experience from './Experience';
+import Objective from '../objetiveText/Objective'; 
 
-const WrapObjWhoIs: React.FC = () => {
+
+const WrapChangeBack: React.FC = () => {
   const [backgroundProgress, setBackgroundProgress] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -13,13 +15,14 @@ const WrapObjWhoIs: React.FC = () => {
     const handleScroll = () => {
       const rect = container.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-      const colorChangeThreshold = window.innerWidth > 768 ? 0.1 : 0.1;
+      // const colorChangeThreshold = window.innerWidth > 768 ? 0.1 : 0.1;
+      const colorChangeThreshold = 1;
 
       let progress = 0;
       if (rect.top <= -windowHeight * colorChangeThreshold) {
         progress = Math.min(
           1,
-          (-windowHeight * colorChangeThreshold - rect.top) / (windowHeight * 0.3)
+          (-windowHeight * colorChangeThreshold - rect.top) / (windowHeight * 0.4)
         );
       }
 
@@ -40,15 +43,18 @@ const WrapObjWhoIs: React.FC = () => {
   };
 
   return (
-    <div 
-      ref={containerRef}
-      className="relative transition-colors duration-500"
-      style={{ backgroundColor: calculateBackground() }}
-    >
+   <div>
+     <section  
+       ref={containerRef}
+       className="relative transition-colors duration-500"
+       style={{ backgroundColor: calculateBackground() }}
+     >
+      <Objective />
       <Experience />
       <WhoIs />
-    </div>
+     </section>
+   </div>
   );
 };
 
-export default WrapObjWhoIs;
+export default WrapChangeBack;
