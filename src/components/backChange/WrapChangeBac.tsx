@@ -43,17 +43,16 @@ const WrapChangeBack: React.FC = () => {
   };
 
   return (
-   <div>
-     <section  
-       ref={containerRef}
-       className="relative transition-colors duration-500"
-       style={{ backgroundColor: calculateBackground() }}
-     >
+   
+    <section  
+      ref={containerRef}
+      className="relative transition-colors duration-500"
+      style={{ backgroundColor: calculateBackground() }}
+    >
       <Objective />
       <Experience />
       <WhoIs />
-     </section>
-   </div>
+    </section>
   );
 };
 

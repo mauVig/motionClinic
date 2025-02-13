@@ -58,7 +58,7 @@ const WhoIs: React.FC = () => {
     };
 
     return (
-        <section ref={containerRef} className="h-[120vh] w-full pb-12 relative px-6 text-black flex items-center justify-center">
+        <section ref={containerRef} className="h-[100vh] w-full pb-12 relative px-6 text-black flex items-center justify-center">
             <div className="flex items-center justify-center gap-2 relative">
                 <span className="font-medium truncate transition-all duration-300 text-xl xs:text-3xl sm:text-5xl lx:text-7xl">Who is</span>
                 <div className="transition-all duration-300 ease-out overflow-hidden flex items-center justify-center">

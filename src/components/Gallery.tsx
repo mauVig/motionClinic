@@ -1,13 +1,23 @@
 import React, { useEffect, useRef } from 'react';
 
-export const Gallery: React.FC = () => {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const sectionRef = useRef<HTMLDivElement>(null);
+export const Gallery = () => {
+    const containerRef = useRef(null);
+    const sectionRef = useRef(null);
+    const imageRefs = useRef([]);
+
+    const imageClasses = [
+        "w-full object-contain translate-y-32",
+        "w-full object-contain translate-y-72",
+        "w-full object-contain translate-y-56",
+        "w-full object-contain translate-y-32",
+        "w-full object-contain translate-y-72",
+        "w-full object-contain translate-y-60",
+        "w-full object-contain translate-y-48"
+    ];
 
     useEffect(() => {
         const container = containerRef.current;
         const section = sectionRef.current;
-
         if (!container || !section) return;
 
         const sectionWidth = section.scrollWidth;
@@ -24,6 +34,16 @@ export const Gallery: React.FC = () => {
                 const scrollAmount = Math.min(progress * scrollableWidth, scrollableWidth);
                 section.scrollLeft = scrollAmount;
             }
+
+            // Handle fade effects
+            imageRefs.current.forEach((imgDiv) => {
+                if (!imgDiv) return;
+                const rect = imgDiv.getBoundingClientRect();
+                const isVisible = rect.left < window.innerWidth && rect.right > 0;
+                const opacity = isVisible ? 1 : 0;
+                imgDiv.style.opacity = opacity;
+                imgDiv.style.transition = 'opacity 0.5s ease-in-out';
+            });
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -37,53 +57,24 @@ export const Gallery: React.FC = () => {
                 className="sticky top-0 overflow-x-hidden"
                 style={{ height: '100vh' }}
             >
-                <section className="inline-flex min-w-[200vw] px-14 gap-8">
-                    <div className="w-[400px] flex-shrink-0">
-                        <img src="/img/gallery/gallery1.jpg" alt="Galería 1" className="w-full object-contain translate-y-32"/>
-                    </div>
-                    <div className="w-[400px] flex-shrink-0">
-                        <img src="/img/gallery/gallery2.jpg" alt="Galería 2" className="w-full object-contain translate-y-72"/>
-                    </div>
-                    <div className="w-[400px] flex-shrink-0">
-                        <img src="/img/gallery/gallery3.jpg" alt="Galería 3" className="w-full object-contain translate-y-48"/>
-                    </div>
-                    <div className="w-[400px] flex-shrink-0">
-                        <img src="/img/gallery/gallery4.jpg" alt="Galería 4" className="w-full object-contain translate-y-3"/>
-                    </div>
-                    <div className="w-[400px] flex-shrink-0">
-                        <img src="/img/gallery/gallery5.jpg" alt="Galería 5" className="w-full object-contain translate-y-60"/>
-                    </div>
-                    <div className="w-[400px] flex-shrink-0">
-                        <img src="/img/gallery/gallery6.jpg" alt="Galería 6" className="w-full object-contain translate-y-3"/>
-                    </div>
-                    <div className="w-[400px] flex-shrink-0">
-                        <img src="/img/gallery/gallery7.jpg" alt="Galería 7" className="w-full object-contain translate-y-72"/>
-                    </div>
-                    <div className="w-[400px] flex-shrink-0">
-                        <img src="/img/gallery/gallery1.jpg" alt="Galería 8" className="w-full object-contain translate-y-32"/>
-                    </div>
-                    <div className="w-[400px] flex-shrink-0">
-                        <img src="/img/gallery/gallery2.jpg" alt="Galería 9" className="w-full object-contain translate-y-72"/>
-                    </div>
-                    <div className="w-[400px] flex-shrink-0">
-                        <img src="/img/gallery/gallery3.jpg" alt="Galería 10" className="w-full object-contain translate-y-48"/>
-                    </div>
-                    <div className="w-[400px] flex-shrink-0">
-                        <img src="/img/gallery/gallery4.jpg" alt="Galería 11" className="w-full object-contain translate-y-3"/>
-                    </div>
-                    <div className="w-[400px] flex-shrink-0">
-                        <img src="/img/gallery/gallery5.jpg" alt="Galería 12" className="w-full object-contain translate-y-60"/>
-                    </div>
-                    <div className="w-[400px] flex-shrink-0">
-                        <img src="/img/gallery/gallery6.jpg" alt="Galería 13" className="w-full object-contain translate-y-3"/>
-                    </div>
-                    <div className="w-[400px] flex-shrink-0">
-                        <img src="/img/gallery/gallery7.jpg" alt="Galería 14" className="w-full object-contain translate-y-72"/>
-                    </div>
+                <section className="inline-flex min-w-[200vw] px-6 gap-8">
+                    {[...Array(14)].map((_, index) => (
+                        <div 
+                            key={index}
+                            ref={el => imageRefs.current[index] = el}
+                            className="w-[400px] flex-shrink-0 opacity-0"
+                        >
+                            <img 
+                                src={`/img/gallery/gallery${(index % 7) + 1}.jpg`}
+                                alt={`Galería ${index + 1}`}
+                                className={imageClasses[index % 7]}
+                            />
+                        </div>
+                    ))}
                 </section>
             </div>
         </div>
     );
-}
+};
 
 export default Gallery;

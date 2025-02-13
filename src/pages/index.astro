@@ -9,9 +9,11 @@ import Footer from '@/components/Footer.astro';
 import WrapChangeBack from '@/components/backChange/WrapChangeBac';
 import VideoPlayer from '@/components/VideoPlayer';
 import Gallery from '@/components/Gallery';
+import NavBar from '@/components/NavBar.astro';
 ---
 
 <Layout>
+	<NavBar />
 	<Welcome  client:only/>
 	<WrapChangeBack client:only/>
 	<VideoPlayer client:only />

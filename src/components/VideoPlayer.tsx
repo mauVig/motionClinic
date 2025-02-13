@@ -40,43 +40,7 @@ const VideoPlayer: React.FC = () => {
         }
       });
     };
-
-    const handleScrollStart = () => setIsScrolling(true);
-    const handleScrollEnd = () => {
-      setTimeout(() => setIsScrolling(false), 150);
-    };
-
-    if (hasMouse) {
-      const handleGlobalMouseMove = (e: MouseEvent) => {
-        if (!containerRef.current || isScrolling) return;
-        
-        const rect = containerRef.current.getBoundingClientRect();
-        const x = e.clientX;
-        const y = e.clientY;
-        
-        // Check if mouse is near scrollbar (20px threshold)
-        const isNearScrollbar = window.innerWidth - x <= 20;
-        
-        if (!isNearScrollbar) {
-          setCursorPosition({ x, y });
-          const isInBounds = y >= rect.top && y <= rect.bottom;
-          setIsInVideoArea(isInBounds);
-        } else {
-          setIsInVideoArea(false);
-        }
-      };
-
-      document.addEventListener('mousemove', handleGlobalMouseMove);
-      document.addEventListener('mousedown', handleScrollStart);
-      document.addEventListener('mouseup', handleScrollEnd);
-      
-      return () => {
-        document.removeEventListener('mousemove', handleGlobalMouseMove);
-        document.removeEventListener('mousedown', handleScrollStart);
-        document.removeEventListener('mouseup', handleScrollEnd);
-      };
-    }
-  }, [hasMouse, isScrolling]);
+  }, []);
 
   const handlePlay = () => {
     if (player && !isScrolling) {
@@ -98,11 +62,11 @@ const VideoPlayer: React.FC = () => {
       style={{ cursor: hasMouse && isInVideoArea && !isPlaying && !isScrolling ? 'none' : 'default' }}  
       onClick={handlePlay}  
     >  
-      <div   
-        className="absolute inset-0 z-20 bg-black/30 transition-opacity duration-300"  
+      {/* <div   
+        className="absolute inset-0 z-20 bg-black/30 transition-opacity duration-300 "  
         style={{ opacity: isPlaying ? 0 : 1 }}  
-      />  
-
+      />   */}
+{/* 
       {hasMouse && isInVideoArea && !isPlaying && !isScrolling && (  
         <div   
           className="custom-cursor fixed z-30 pointer-events-none"  
@@ -116,7 +80,7 @@ const VideoPlayer: React.FC = () => {
             WATCH FILM  
           </div>  
         </div>  
-      )}  
+      )}   */}
 
       <iframe  
         id="youtube-player"  
@@ -126,7 +90,7 @@ const VideoPlayer: React.FC = () => {
         allowFullScreen  
       />  
 
-      <style jsx>{`  
+      <style>{`  
         .custom-cursor {  
           transition: opacity 0.3s ease;  
           will-change: transform;  
