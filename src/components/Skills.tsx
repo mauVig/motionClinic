@@ -31,7 +31,7 @@ const Skills: React.FC = () => {
       },
       {
         root: null,
-        rootMargin: '-49% 0px -49% 0px',
+        rootMargin: '-20% 0px',
         threshold: [0.5]
       }
     );
@@ -63,7 +63,8 @@ const Skills: React.FC = () => {
                   font-bold 
                   cursor-pointer 
                   group-hover:text-grey 
-                  transition-colors
+                  transition-all
+                    duration-300
                   ${flashStates[skill.title] ? 'text-[#e8e8e8]' : ''}
                   ${viewStates[skill.title] ? 'text-[#e8e8e8]' : 'text-[#666666] hover:text-purple'}
                 `}

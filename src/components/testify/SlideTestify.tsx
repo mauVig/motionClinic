@@ -1,42 +1,53 @@
+import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
-import 'swiper/css/effect-cube';
+import 'swiper/css/effect-fade';
+import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import '@/style/globalStyle.css';
 
-
-import { EffectCube, Pagination } from 'swiper/modules';
-
+import { EffectFade, Navigation, Pagination } from 'swiper/modules';
 
 export const SlideTestify = () => {
     return (
-        <div className=' flex items-center'>
+        // Agregamos h-screen para ocupar toda la altura de la pantalla
+        <div className='w-full h-screen'>
             <Swiper
-                effect={'cube'}
-                grabCursor={true}
-                cubeEffect={{
-                    shadow: true,
-                    slideShadows: false,
-                    shadowOffset: 20,
-                    shadowScale: 0.94,
+                spaceBetween={0} // Reducimos el espacio entre slides a 0
+                effect={'fade'}
+                navigation={true}
+                pagination={{
+                    clickable: true,
                 }}
-                pagination={true}
-                modules={[EffectCube, Pagination]}
-                className="swiper"
-                >
-                <SwiperSlide>
-                    <img src="/public/img/cubeSlide/cube1.jpeg" />
+                modules={[EffectFade, Navigation, Pagination]}
+                className="mySwiper h-full w-full" // Aseguramos que Swiper ocupe todo el espacio
+            >
+                {/* Aplicamos clases a cada SwiperSlide para controlar las dimensiones */}
+                <SwiperSlide className="w-full h-full">
+                    <img 
+                        src="/public/img/cubeSlide/cube1.jpeg"
+                        className="w-full h-full object-cover" // object-cover para mantener la proporción
+                    />
                 </SwiperSlide>
-                <SwiperSlide>
-                    <img src="/public/img/cubeSlide/cube2.jpeg" />
+                <SwiperSlide className="w-full h-full">
+                    <img 
+                        src="/public/img/cubeSlide/cube2.jpeg"
+                        className="w-full h-full object-cover"
+                    />
                 </SwiperSlide>
-                <SwiperSlide>
-                <img src="/public/img/cubeSlide/cube3.jpeg" />
+                <SwiperSlide className="w-full h-full">
+                    <img 
+                        src="/public/img/cubeSlide/cube3.jpeg"
+                        className="w-full h-full object-cover"
+                    />
                 </SwiperSlide>
-                <SwiperSlide>
-                <img src="/public/img/cubeSlide/cube4.jpeg" />
+                <SwiperSlide className="w-full h-full">
+                    <img 
+                        src="/public/img/cubeSlide/cube4.jpeg"
+                        className="w-full h-full object-cover"
+                    />
                 </SwiperSlide>
             </Swiper>
         </div>

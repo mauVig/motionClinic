@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ShinyText from './ShinyText';
 
-const RevealSection:React.FC = () => {
+const Objective:React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const text = "#DoItAgain";
 
@@ -26,7 +26,7 @@ const RevealSection:React.FC = () => {
       }
     };
   }, []);
-// recuperar tu calidad de vida
+  
   return (
     <section className=" text-grey flex items-center px-6 py-36" id="reveal-section">
       <div className="flex flex-col items-center justify-center w-full">
@@ -52,4 +52,4 @@ const RevealSection:React.FC = () => {
   );
 };
 
-export default RevealSection;
+export default Objective;

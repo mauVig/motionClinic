@@ -16,7 +16,7 @@ const WrapChangeBack: React.FC = () => {
       const rect = container.getBoundingClientRect();
       const windowHeight = window.innerHeight;
       // const colorChangeThreshold = window.innerWidth > 768 ? 0.1 : 0.1;
-      const colorChangeThreshold = 1;
+      const colorChangeThreshold = 0.8;
 
       let progress = 0;
       if (rect.top <= -windowHeight * colorChangeThreshold) {

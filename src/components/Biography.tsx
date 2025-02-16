@@ -37,7 +37,7 @@ const Biography: React.FC = () => {
         <div className="pb-32 xl:grid xl:grid-cols-2 relative">
           <div className="fade-element">
             <span className="text-sm">BIOGRAPHY</span>
-            <h2 className="text-2xl ml-4">Adrés Ananía</h2>
+            <h2 className="text-2xl ml-4">Andrés Ananía</h2>
           </div>
          <div>
           <main>
@@ -46,11 +46,21 @@ const Biography: React.FC = () => {
              </p>
           </main>
            <div className="grid grid-cols-5 mt-4 fade-element">
-            <img src="svg/acreditaciones-01.svg" className='h-28'  alt="" />
-            <img src="svg/acreditaciones-02.svg" className='h-28'  alt="" />
-            <img src="svg/acreditaciones-03.svg" className='h-28'  alt="" />
-            <img src="svg/acreditaciones-04.svg" className='h-28'  alt="" />
-            <img src="svg/acreditaciones-05.svg" className='h-28'  alt="" />
+            <a href='https://aaot.org.ar/' target='_blank' rel='noreferrer'>
+              <img src="svg/acreditaciones-01.svg" className='h-28 transition-all duration-1000 hover:scale-125 block mx-auto'  alt="" />
+            </a>
+            <a href='https://cartilage.org/' target='_blank' rel='noreferrer'>
+              <img src="svg/acreditaciones-02.svg" className='h-28 transition-all duration-1000 hover:scale-125 block mx-auto'  alt="" />
+            </a>
+            <a href='https://aofoundation.org/'  target='_blank' rel='noreferrer'>
+              <img src="svg/acreditaciones-03.svg" className='h-28 transition-all duration-1000 hover:scale-125 block mx-auto'  alt="" />
+            </a>
+            <a href='https://acaro.org.ar/' target='_blank' rel='noreferrer'>
+              <img src="svg/acreditaciones-04.svg" className='h-28 transition-all duration-1000 hover:scale-125 block mx-auto'  alt="" />
+            </a>
+            <a href='https://aaot.org.ar/' target='_blank' rel='noreferrer'>
+              <img src="svg/acreditaciones-05.svg" className='h-28 transition-all duration-1000 hover:scale-125 block mx-auto'  alt="" />
+            </a>
            </div>
          </div>
           <div className="line-fade absolute bottom-0 -left-6 myWidth h-[0.5px] bg-grey"></div>

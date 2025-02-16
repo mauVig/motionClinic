@@ -22,7 +22,7 @@ const ScrollSection: React.FC<ScrollSectionProps> = ({ className = '' }) => {
   }, []);
 
   const calculateTransform = (base: number): string => {
-    const moveAmount = (scrollY * 0.2); // Incrementado de 0.1 a 0.3
+    const moveAmount = (scrollY * 0.2);
     return `translateY(${base - moveAmount}px)`;
   };
 
@@ -30,7 +30,7 @@ const ScrollSection: React.FC<ScrollSectionProps> = ({ className = '' }) => {
     <section ref={sectionRef} className={`w-full  px-6 text-grey ${className}`}>
       <div className="relative max-w-screen-2xl mx-auto">
         <div className="flex items-center justify-center text-center py-52">
-          <div className="relative z-10 flex flex-col items-center">
+          <div className="relative flex flex-col items-center">
             <h2 className="text-4xl xs:text-6xl mid:text-7xl lx:text-9xl mb-4">
               Years of <br />experience
             </h2>

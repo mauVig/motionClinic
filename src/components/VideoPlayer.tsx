@@ -62,26 +62,6 @@ const VideoPlayer: React.FC = () => {
       style={{ cursor: hasMouse && isInVideoArea && !isPlaying && !isScrolling ? 'none' : 'default' }}  
       onClick={handlePlay}  
     >  
-      {/* <div   
-        className="absolute inset-0 z-20 bg-black/30 transition-opacity duration-300 "  
-        style={{ opacity: isPlaying ? 0 : 1 }}  
-      />   */}
-{/* 
-      {hasMouse && isInVideoArea && !isPlaying && !isScrolling && (  
-        <div   
-          className="custom-cursor fixed z-30 pointer-events-none"  
-          style={{  
-            left: cursorPosition.x,  
-            top: cursorPosition.y,  
-            transform: 'translate(-50%, -50%)'  
-          }}  
-        >  
-          <div className="w-60 h-60 rounded-full border-2 border-violet text-grey flex items-center justify-center text-white bg-black/20 backdrop-blur-sm">  
-            WATCH FILM  
-          </div>  
-        </div>  
-      )}   */}
-
       <iframe  
         id="youtube-player"  
         src="https://www.youtube.com/embed/KULGrLXNu3E?enablejsapi=1"  
