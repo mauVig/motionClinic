@@ -8,7 +8,7 @@ import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
 
 export const SlideTestify = () => {
     return (
-        <div className='w-full h-screen relative'> {/* Añadimos 'relative' al contenedor */}
+        <div className='w-full h-screen relative'> 
             <Swiper
                 spaceBetween={0}
                 effect={'fade'}
@@ -51,11 +51,11 @@ export const SlideTestify = () => {
                         className="w-full h-full object-cover"
                     />
                 </SwiperSlide>
-                {/* Agregamos los elementos personalizados para las flechas con las clases necesarias */}
+                
                 <div className="swiper-button-prev-custom swiper-button-prev"></div>
                 <div className="swiper-button-next-custom swiper-button-next"></div>
             </Swiper>
-            {/* Agregamos estilos CSS personalizados para las flechas */}
+           
             <style>{`
                 .swiper-button-prev-custom,
                 .swiper-button-next-custom {
