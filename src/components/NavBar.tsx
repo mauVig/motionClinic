@@ -11,14 +11,18 @@ export const NavBar = () => {
 
   return (
     <>
+      {/* <header
+        className={`fixed top-0 z-40 w-full transition-all duration-300 `}
+      > */}
       <header
         className={`fixed top-0 z-40 w-full transition-all duration-300 ${
           scrollDirection === 'down' && !isMenuOpen ? '-translate-y-[105%]' : 'translate-y-0'
         }`}
       >
+        
         <div
           className={`flex justify-between items-center p-2 transition-all duration-300 ${
-            !isAtTop ? 'bg-textBlack/25 backdrop-blur-sm' : ''
+            !isAtTop ? 'backdrop-blur-sm' : ''
           }`}
         >
          <div className='w-44 flex justify-start'>

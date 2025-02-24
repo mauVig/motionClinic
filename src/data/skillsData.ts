@@ -6,6 +6,11 @@ export const skillsData = [
         description:`Máxima e inigualable precisión en reemplazos articulares de cadera y rodilla, utilizando el sistema robótico más avanzado del mundo. Ofrece beneficios como menor dolor postoperatorio, incisiones mínimas y una colocación personalizada de los implantes. <span class="text-purple">Esto permite una recuperación más rápida, optimiza la funcionalidad, mejora la calidad de vida y prolonga la durabilidad de los implantes.</span>`
     },
     {
+        id:7,
+        title:'Incisiones Mini Invasivas',
+        description:`Técnica avanzada que reduce el trauma quirúrgico, permitiendo una recuperación mas rápida, menos dolor y cicatrices mínimas. <span class="text-purple">Apoyados en tecnología de precisión, preservamos tejidos sanos y mejoramos la movilidad en menos tiempo.</span>`
+    },
+    {
         id:2,
         title:'Reemplazo articular convencional',
         description:`Cirugías de reemplazo articular con técnicas tradicionales perfeccionadas para restaurar movilidad y aliviar dolor crónico por artrosis. <span class="text-purple">Enfocadas en resultados duraderos y recuperación funcional mediante procedimientos confiables y seguros.</span>`
@@ -27,8 +32,8 @@ export const skillsData = [
     },
     {
         id:6,
-        title:'Heridas sin puntos (magic clousure)',
-        description:`Tecnología de última generación en cierre de heridas quirúrgicas, sin necesidad de puntos. El sistema sella la herida de forma hermética, reduciendo significativamente el riesgo de infecciones. Además, maximiza el confort del paciente al no requerir curaciones diarias y permitir baños de higiene personal sin complicaciones.  <span class="text-purple">Como resultado, se obtienen cicatrices mínimas y resultados estéticos impecables que mejoran la confianza y satisfacción del paciente.</span>`
+        title:'Cierre de Heridas sin puntos (magic clousure)',
+        description:`Tecnología de última generación en cierre de heridas quirúrgicas, sin necesidad de puntos. El sistema sella la herida de forma hermética, reduciendo significativamente el riesgo de infecciones. Además, maximiza el confort del paciente al no requerir curaciones diarias y permitir baños de higiene personal sin complicaciones. <span class="text-purple">Como resultado, se obtienen cicatrices mínimas y resultados estéticos impecables que mejoran la confianza y satisfacción del paciente.</span>`
     },
 
 ]

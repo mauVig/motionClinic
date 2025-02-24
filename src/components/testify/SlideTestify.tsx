@@ -1,57 +1,85 @@
-import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
 import '@/style/globalStyle.css';
-
-import { EffectFade, Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
 
 export const SlideTestify = () => {
     return (
-        // Agregamos h-screen para ocupar toda la altura de la pantalla
-        <div className='w-full h-screen'>
+        <div className='w-full h-screen relative'> {/* Añadimos 'relative' al contenedor */}
             <Swiper
-                spaceBetween={0} // Reducimos el espacio entre slides a 0
+                spaceBetween={0}
                 effect={'fade'}
-                navigation={true}
+                loop={true}
                 pagination={{
                     clickable: true,
                 }}
-                modules={[EffectFade, Navigation, Pagination]}
-                className="mySwiper h-full w-full" // Aseguramos que Swiper ocupe todo el espacio
+                autoplay={{
+                    delay: 2000,
+                    disableOnInteraction: false,
+                }}
+                navigation={{
+                    prevEl: '.swiper-button-prev-custom',
+                    nextEl: '.swiper-button-next-custom',
+                }}
+                modules={[EffectFade, Autoplay, Pagination, Navigation]}
+                className="mySwiper h-full w-full"
             >
-                {/* Aplicamos clases a cada SwiperSlide para controlar las dimensiones */}
                 <SwiperSlide className="w-full h-full">
-                    <img 
-                        src="/public/img/cubeSlide/cube1.jpeg"
-                        className="w-full h-full object-cover" // object-cover para mantener la proporción
-                    />
-                </SwiperSlide>
-                <SwiperSlide className="w-full h-full">
-                    <img 
-                        src="/public/img/cubeSlide/cube2.jpeg"
+                    <img
+                        src="/img/cubeSlide/cube1.jpeg"
                         className="w-full h-full object-cover"
                     />
                 </SwiperSlide>
                 <SwiperSlide className="w-full h-full">
-                    <img 
-                        src="/public/img/cubeSlide/cube3.jpeg"
+                    <img
+                        src="/img/cubeSlide/cube2.jpeg"
                         className="w-full h-full object-cover"
                     />
                 </SwiperSlide>
                 <SwiperSlide className="w-full h-full">
-                    <img 
-                        src="/public/img/cubeSlide/cube4.jpeg"
+                    <img
+                        src="/img/cubeSlide/cube3.jpeg"
                         className="w-full h-full object-cover"
                     />
                 </SwiperSlide>
+                <SwiperSlide className="w-full h-full">
+                    <img
+                        src="/img/cubeSlide/cube4.jpeg"
+                        className="w-full h-full object-cover"
+                    />
+                </SwiperSlide>
+                {/* Agregamos los elementos personalizados para las flechas con las clases necesarias */}
+                <div className="swiper-button-prev-custom swiper-button-prev"></div>
+                <div className="swiper-button-next-custom swiper-button-next"></div>
             </Swiper>
+            {/* Agregamos estilos CSS personalizados para las flechas */}
+            <style>{`
+                .swiper-button-prev-custom,
+                .swiper-button-next-custom {
+                    color: #5b5bc4;
+                    width: 40px;
+                    height: 40px;
+                    margin-top: -20px;
+                    position: absolute; /* Añadimos 'absolute' */
+                    top: 50%; /* Centramos verticalmente */
+                    z-index: 10; /* Aseguramos que estén por encima de las imágenes */
+                }
+                .swiper-button-prev-custom {
+                    left: 10px; /* Ajustamos la posición izquierda */
+                }
+                .swiper-button-next-custom {
+                    right: 10px; /* Ajustamos la posición derecha */
+                }
+                .swiper-button-prev-custom:after,
+                .swiper-button-next-custom:after {
+                    font-size: 50px;
+                }
+            `}</style>
         </div>
     );
-}
+};
 
 export default SlideTestify;

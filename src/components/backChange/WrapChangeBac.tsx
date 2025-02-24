@@ -16,13 +16,13 @@ const WrapChangeBack: React.FC = () => {
       const rect = container.getBoundingClientRect();
       const windowHeight = window.innerHeight;
       // const colorChangeThreshold = window.innerWidth > 768 ? 0.1 : 0.1;
-      const colorChangeThreshold = 0.8;
+      const colorChangeThreshold = 0.76;
 
       let progress = 0;
       if (rect.top <= -windowHeight * colorChangeThreshold) {
         progress = Math.min(
           1,
-          (-windowHeight * colorChangeThreshold - rect.top) / (windowHeight * 0.4)
+          (-windowHeight * colorChangeThreshold - rect.top) / (windowHeight * 0.35)
         );
       }
 
@@ -49,6 +49,8 @@ const WrapChangeBack: React.FC = () => {
       className="relative transition-colors duration-500"
       style={{ backgroundColor: calculateBackground() }}
     >
+			<div className="absolute -top-[150px] left-0 right-0 h-[150px] bg-gradient-to-t from-backBlack " />
+
       <Objective />
       <Experience />
       <WhoIs />

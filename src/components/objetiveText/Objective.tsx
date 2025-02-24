@@ -35,7 +35,7 @@ const Objective:React.FC = () => {
           {text.split('').map((char, index) => (
             <span
               key={`${char}-${index}`}
-              className="inline-block transition-all duration-300 ease-out h-36"
+              className="inline-block transition-all duration-300 ease-out h-36 font-bold"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(50%)',

@@ -26,41 +26,14 @@ const VideoPlayer: React.FC = () => {
     checkForMouse();
   }, []);
 
-  useEffect(() => {
-    const tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    document.head.appendChild(tag);
 
-    window.onYouTubeIframeAPIReady = () => {
-      new window.YT.Player('youtube-player', {
-        videoId: 'KULGrLXNu3E',
-        playerVars: { autoplay: 0, mute: 1, controls: 0 },
-        events: {
-          onReady: (event: any) => setPlayer(event.target)
-        }
-      });
-    };
-  }, []);
 
-  const handlePlay = () => {
-    if (player && !isScrolling) {
-      if (!isPlaying) {
-        player.playVideo();
-        player.unMute();
-      } else {
-        player.pauseVideo();
-        player.mute();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
 
   return (
     <div   
       ref={containerRef}  
       className="relative h-screen overflow-hidden bg-backBlack"  
       style={{ cursor: hasMouse && isInVideoArea && !isPlaying && !isScrolling ? 'none' : 'default' }}  
-      onClick={handlePlay}  
     >  
       <iframe  
         id="youtube-player"  

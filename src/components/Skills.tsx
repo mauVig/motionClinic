@@ -5,6 +5,7 @@ const Skills: React.FC = () => {
   const [viewStates, setViewStates] = useState<{ [key: string]: boolean }>({});
   const [flashStates, setFlashStates] = useState<{ [key: string]: boolean }>({});
   const titleRefs = useRef<(HTMLHeadingElement | null)[]>([]);
+  const h2Ref = useRef<HTMLHeadingElement>(null);
 
   const toggleView = (skillTitle: string) => {
     setViewStates(prev => ({
@@ -22,7 +23,7 @@ const Skills: React.FC = () => {
 
           if (entry.isIntersecting) {
             setFlashStates(prev => ({ ...prev, [title]: true }));
-            
+
             setTimeout(() => {
               setFlashStates(prev => ({ ...prev, [title]: false }));
             }, 1400);
@@ -32,7 +33,7 @@ const Skills: React.FC = () => {
       {
         root: null,
         rootMargin: '-20% 0px',
-        threshold: [0.5]
+        threshold: [0.8]
       }
     );
 
@@ -43,15 +44,41 @@ const Skills: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const h2Observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in");
+          } else {
+            entry.target.classList.remove("fade-in");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (h2Ref.current) {
+      h2Observer.observe(h2Ref.current);
+    }
+
+    return () => {
+      if (h2Ref.current) {
+        h2Observer.unobserve(h2Ref.current);
+      }
+      h2Observer.disconnect();
+    };
+  }, []);
+
   return (
     <section className="bg-backBlack text-[#666666] px-6 pb-36">
       <div className='max-w-screen-2xl mx-auto'>
-        <h2 className='text-7xl mb-32 pt-4 text-violet'>Skills</h2>
+        <h2 ref={h2Ref} className='text-7xl mb-32 pt-4 text-violet fade-element'>Skills</h2>
         {skillsData.map((skill, i) => (
-          <div 
+          <div
             className={`mt-8 hover:cursor-pointer pt-4 group ${
               i !== 0 ? 'border-t-[.5px] border-[#666666]' : ''
-            }`} 
+            }`}
             key={i}
           >
             <div className='flex justify-between items-center' onClick={() => toggleView(skill.title)}>
@@ -59,12 +86,12 @@ const Skills: React.FC = () => {
                 ref={el => titleRefs.current[i] = el}
                 data-title={skill.title}
                 className={`
-                  text-2xl 
-                  font-bold 
-                  cursor-pointer 
-                  group-hover:text-grey 
+                  text-2xl
+                  font-bold
+                  cursor-pointer
+                  group-hover:text-grey
                   transition-all
-                    duration-300
+                  duration-300
                   ${flashStates[skill.title] ? 'text-[#e8e8e8]' : ''}
                   ${viewStates[skill.title] ? 'text-[#e8e8e8]' : 'text-[#666666] hover:text-purple'}
                 `}
@@ -89,8 +116,8 @@ const Skills: React.FC = () => {
                     duration-500
                     origin-[100%_50%]
                     ${flashStates[skill.title] ? 'bg-[#e8e8e8]' : ''}
-                    ${viewStates[skill.title] 
-                      ? 'rotate-45 bg-[#e8e8e8] opacity-70' 
+                    ${viewStates[skill.title]
+                      ? 'rotate-45 bg-[#e8e8e8] opacity-70'
                       : '-rotate-45 bg-[#666666] group-hover:bg-grey'
                     }
                   `}
@@ -108,8 +135,8 @@ const Skills: React.FC = () => {
                     duration-500
                     origin-[0%_50%]
                     ${flashStates[skill.title] ? 'bg-[#e8e8e8]' : ''}
-                    ${viewStates[skill.title] 
-                      ? '-rotate-45 bg-[#e8e8e8] -translate-x-2 opacity-70' 
+                    ${viewStates[skill.title]
+                      ? '-rotate-45 bg-[#e8e8e8] -translate-x-2 opacity-70'
                       : 'rotate-45 bg-[#666666] group-hover:bg-grey'
                     }
                   `}
@@ -124,13 +151,24 @@ const Skills: React.FC = () => {
               `}
             >
               <p
-                className="mt-4"
+                className="mt-2 leading-7 w-[90%]"
                 dangerouslySetInnerHTML={{ __html: skill.description }}
               />
             </div>
           </div>
         ))}
       </div>
+      <style>{`
+        .fade-element {
+          opacity: 0;
+          transform: translateY(50px);
+          transition: all 0.8s ease-out;
+        }
+        .fade-in {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      `}</style>
     </section>
   );
 };

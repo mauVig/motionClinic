@@ -4,16 +4,20 @@ import Layout from '@/layouts/Layout.astro';
 import Biography from '@/components/Biography';
 import Skills from '@/components/Skills.tsx';
 import TestifyWrapp from '@/components/testify/TestifyWrapp.astro';
-import TestifyVideos from '@/components/testify/TestifyVideos.astro';
+import TestifyVideos from '@/components/testify/TestifyVideos.tsx';
 import Contact from '@/components/Contact.astro';
 import Footer from '@/components/Footer.astro';
 import WrapChangeBack from '@/components/backChange/WrapChangeBac';
 import VideoPlayer from '@/components/VideoPlayer';
 import Gallery from '@/components/Gallery';
 import NavBar from '@/components/NavBar.tsx';
+import Loading from '@/components/Loading.tsx';
 ---
 
 <Layout>
+	<div id="loader" class="loader">
+		<Loading />
+	</div>
 	<NavBar client:only/>
 	<Welcome  client:only/>
 	<WrapChangeBack client:only/>
@@ -21,8 +25,17 @@ import NavBar from '@/components/NavBar.tsx';
 	<Biography client:only/>
 	<Gallery client:only />
 	<Skills client:only/>
-	<TestifyVideos />
+	<TestifyVideos client:only />
 	<TestifyWrapp  />
 	<Contact />
 	<Footer />
 </Layout>
+
+<script>
+	window.hideLoader = function() {
+	  const loader = document.getElementById('loader');
+	  if (loader) {
+		loader.classList.add('hidden');
+	  }
+	};
+</script>

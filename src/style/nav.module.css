@@ -1,0 +1,9 @@
+.back{
+    background: url('/img/back-cell.jpg') no-repeat center center;
+    background-size: cover;
+}
+@media( width > 768px){
+    .back{
+        background: url('/img/back-pc.jpg') no-repeat center center;
+    }
+}

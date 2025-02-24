@@ -32,12 +32,12 @@ const Biography: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full relative bg-backBlack px-6 py-36 text-grey overflow-hidden">
+    <section ref={sectionRef} className="w-full relative bg-backBlack px-6 py-24 text-grey overflow-hidden">
       <div className="max-w-screen-2xl mx-auto">
         <div className="pb-32 xl:grid xl:grid-cols-2 relative">
           <div className="fade-element">
-            <span className="text-sm">BIOGRAPHY</span>
-            <h2 className="text-2xl ml-4">Andrés Ananía</h2>
+            <span className="text-xs block transform -translate-y-4 ">BIOGRAPHY</span>
+            <h1 className="text-3xl font-bold">Andrés Ananía</h1>
           </div>
          <div>
           <main>
@@ -47,27 +47,27 @@ const Biography: React.FC = () => {
           </main>
            <div className="grid grid-cols-5 mt-4 fade-element">
             <a href='https://aaot.org.ar/' target='_blank' rel='noreferrer'>
+              <img src="svg/acreditaciones-05.svg" className='h-28 transition-all duration-1000 hover:scale-125 block mx-auto'  alt="" />
+            </a>
+            <a href='https://acaro.org.ar/' target='_blank' rel='noreferrer'>
+              <img src="svg/acreditaciones-04.svg" className='h-28 transition-all duration-1000 hover:scale-125 block mx-auto'  alt="" />
+            </a>
+            <a href='https://aofoundation.org/'  target='_blank' rel='noreferrer'>
+              <img src="svg/acreditaciones-03.svg" className='h-28 transition-all duration-1000 hover:scale-125 block mx-auto'  alt="" />
+            </a>
+            <a href='https://www.aaos.org/' target='_blank' rel='noreferrer'>
               <img src="svg/acreditaciones-01.svg" className='h-28 transition-all duration-1000 hover:scale-125 block mx-auto'  alt="" />
             </a>
             <a href='https://cartilage.org/' target='_blank' rel='noreferrer'>
               <img src="svg/acreditaciones-02.svg" className='h-28 transition-all duration-1000 hover:scale-125 block mx-auto'  alt="" />
             </a>
-            <a href='https://aofoundation.org/'  target='_blank' rel='noreferrer'>
-              <img src="svg/acreditaciones-03.svg" className='h-28 transition-all duration-1000 hover:scale-125 block mx-auto'  alt="" />
-            </a>
-            <a href='https://acaro.org.ar/' target='_blank' rel='noreferrer'>
-              <img src="svg/acreditaciones-04.svg" className='h-28 transition-all duration-1000 hover:scale-125 block mx-auto'  alt="" />
-            </a>
-            <a href='https://aaot.org.ar/' target='_blank' rel='noreferrer'>
-              <img src="svg/acreditaciones-05.svg" className='h-28 transition-all duration-1000 hover:scale-125 block mx-auto'  alt="" />
-            </a>
            </div>
          </div>
           <div className="line-fade absolute bottom-0 -left-6 myWidth h-[0.5px] bg-grey"></div>
         </div>
-        <div className="pt-36 text-purple xl:grid xl:grid-cols-2">
+        <div className="pt-8 text-purple xl:grid xl:grid-cols-2">
           <div className="fade-element">
-            <h2 className="text-6xl">The Perfect<br />Surgery</h2>
+            <h2 className="text-6xl font-bold">The Perfect<br />Surgery</h2>
           </div>
           <p className="ml-4 mt-8 text-xl fade-element">
             Introducing the Smart Joint: a revolution in joint replacement. With Stryker Mako Smart Robotics technology, each knee and hip replacement is precisely tailored to the individual needs of each patient, ensuring maximum range of motion and safety. By leveraging Data Analytics and advanced robotics, through Smart Joint we restore natural movement minimizing complications, setting a new standard for life-changing results. This is the future of joint replacement—personalized, precise, and perfected.

@@ -1,10 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const WhoIs: React.FC = () => {
-    // const IMAGE_HEIGHT = 400;
-    // const MAX_WIDTH = 300;
     const IMAGE_HEIGHT = window.innerWidth > 768 ? 400 : window.innerWidth > 640 ? 300 : 200;
-    const MAX_WIDTH = window.innerWidth > 768 ? 300 : window.innerWidth > 640 ? 200 : 100;  
+    const MAX_WIDTH = window.innerWidth > 768 ? 400 : window.innerWidth > 640 ? 200 : 100;  
     const [progress, setProgress] = useState(0);
     const containerRef = useRef<HTMLDivElement>(null);
     const [targetProgress, setTargetProgress] = useState(0);
@@ -21,7 +19,7 @@ const WhoIs: React.FC = () => {
             let newProgress = 0;
             if (rect.top <= windowHeight && rect.bottom >= 0) {
                 newProgress = Math.max(0, Math.min(1, 
-                    1 - (rect.top / (windowHeight * 0.5))
+                    1 - (rect.top / (windowHeight * 0.9))
                 ));
             }
             setTargetProgress(newProgress);
@@ -49,19 +47,21 @@ const WhoIs: React.FC = () => {
     }, [targetProgress]);
 
     const calculateStyles = () => {
+        
         const width = MAX_WIDTH * progress;
+        const height = IMAGE_HEIGHT * progress;
         return {
             width: `${width}px`,
-            height: `${IMAGE_HEIGHT}px`,
-            opacity: progress 
+            height: `${height}px`,
+            opacity: progress * 1.8,
         };
     };
 
     return (
         <section ref={containerRef} className="h-[100vh] w-full pb-12 relative px-6 text-black flex items-center justify-center">
             <div className="flex items-center justify-center gap-2 relative">
-                <span className="font-medium truncate transition-all duration-300 text-xl xs:text-3xl sm:text-5xl lx:text-7xl">Who is</span>
-                <div className="transition-all duration-300 ease-out overflow-hidden flex items-center justify-center">
+                <span className="font-medium truncate transition-all duration-300 text-xl xs:text-3xl sm:text-5xl lx:text-7xl">This is</span>
+                <div className="transition-all duration-300 ease-out overflow-hidden flex items-center justify-center rounded-full">
                     <img
                         src="/img/Andres.jpg"
                         alt="Doctor Andres"
@@ -69,7 +69,7 @@ const WhoIs: React.FC = () => {
                         style={calculateStyles()} 
                     />
                 </div>
-                <span className="font-medium transition-all duration-300 text-xl xs:text-3xl sm:text-5xl lx:text-7xl">Andrés</span>
+                <span className="font-medium transition-all duration-300 text-xl xs:text-3xl sm:text-5xl lx:text-7xl">Andrés </span>
             </div>
         </section>
     );
