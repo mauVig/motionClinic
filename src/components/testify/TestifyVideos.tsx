@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from "react";
+import { useStore } from '@/store/storeGlobal';
 
 export const TestifyVideos:React.FC = () => {
   const h2Ref = useRef<HTMLHeadingElement>(null);
+  const { myLang } = useStore() 
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -14,7 +16,7 @@ export const TestifyVideos:React.FC = () => {
           }
         });
       },
-      { threshold: 0.1 } // Ajusta el threshold según sea necesario
+      { threshold: 0.1 } 
     );
 
     if (h2Ref.current) {
@@ -34,13 +36,25 @@ export const TestifyVideos:React.FC = () => {
       <div className="max-w-screen-2xl mx-auto">
         <h2
           ref={h2Ref}
-          className="text-7xl mb-16 mt-8 text-violet font-bold fade-element"
+          className="text-4xl mid:text-6xl md:text-7xl mb-16 mt-8 text-violet font-bold fade-element"
         >
-          Conocé las
-          <br />
-          historias que
-          <br />
-          <span className="text-grey">nos mueven</span>
+         {!myLang ? (
+           <span>
+              Conocé las
+              <br />
+              historias que
+              <br />
+              <span className="text-grey">nos mueven</span>
+           </span>
+         ): (
+            <span>
+              Know the
+              <br />
+              stories that
+              <br />
+              <span className="text-grey">move us</span>
+            </span>
+         )}
         </h2>
       </div>
       <div className="flex flex-col md:flex-row justify-center items-center gap-y-4">

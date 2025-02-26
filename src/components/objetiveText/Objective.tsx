@@ -31,11 +31,11 @@ const Objective:React.FC = () => {
     <section className=" text-grey flex items-center px-6 py-36" id="reveal-section">
       <div className="flex flex-col items-center justify-center w-full">
         <ShinyText disabled={false} speed={3} /> 
-        <div className="text-6xl md:text-8xl text-purple mt-32 overflow-hidden">
+        <div className="text-5xl xs:text-6xl md:text-8xl text-purple mt-32 overflow-hidden truncate">
           {text.split('').map((char, index) => (
             <span
               key={`${char}-${index}`}
-              className="inline-block transition-all duration-300 ease-out h-36 font-bold"
+              className="inline-block transition-all duration-300 ease-out h-36 font-bold reddit-sans-text "
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(50%)',

@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { skillsData } from '@/data/skillsData';
+import { skillsData, type Skill } from '@/data/skillsData';
+import { useStore } from '@/store/storeGlobal';
 
 const Skills: React.FC = () => {
   const [viewStates, setViewStates] = useState<{ [key: string]: boolean }>({});
   const [flashStates, setFlashStates] = useState<{ [key: string]: boolean }>({});
   const titleRefs = useRef<(HTMLHeadingElement | null)[]>([]);
   const h2Ref = useRef<HTMLHeadingElement>(null);
+  const { myLang } = useStore();
 
   const toggleView = (skillTitle: string) => {
     setViewStates(prev => ({
@@ -73,35 +75,35 @@ const Skills: React.FC = () => {
   return (
     <section className="bg-backBlack text-[#666666] px-6 pb-36">
       <div className='max-w-screen-2xl mx-auto'>
-        <h2 ref={h2Ref} className='text-7xl mb-32 pt-4 text-violet fade-element'>Skills</h2>
-        {skillsData.map((skill, i) => (
+        <h2 ref={h2Ref} className='text-4xl xs:text-6xl mid:text-7xl mb-32 pt-4 text-violet font-bold fade-element'>{ myLang ? 'Skills':'Habilidades' }</h2>
+        {skillsData.map((skill:Skill, i) => (
           <div
             className={`mt-8 hover:cursor-pointer pt-4 group ${
               i !== 0 ? 'border-t-[.5px] border-[#666666]' : ''
             }`}
             key={i}
           >
-            <div className='flex justify-between items-center' onClick={() => toggleView(skill.title)}>
+            <div className='flex justify-between items-center' onClick={() => toggleView(typeof skill.title === 'object' ? (myLang ? skill.title.en : skill.title.es) : skill.title)}>
               <h3
-                ref={el => titleRefs.current[i] = el}
-                data-title={skill.title}
+                ref={el => { titleRefs.current[i] = el; }}
+                data-title={typeof skill.title === 'object' ? (myLang ? skill.title.en : skill.title.es) : skill.title}
                 className={`
-                  text-2xl
+                  text-lg mid:text-2xl
                   font-bold
                   cursor-pointer
                   group-hover:text-grey
                   transition-all
                   duration-300
-                  ${flashStates[skill.title] ? 'text-[#e8e8e8]' : ''}
-                  ${viewStates[skill.title] ? 'text-[#e8e8e8]' : 'text-[#666666] hover:text-purple'}
+                  ${flashStates[typeof skill.title === 'object' ? (myLang ? skill.title.en : skill.title.es) : skill.title] ? 'text-[#e8e8e8] font-bold' : ''}
+                  ${viewStates[typeof skill.title === 'object' ? (myLang ? skill.title.en : skill.title.es) : skill.title] ? 'text-[#e8e8e8]' : 'text-[#666666] hover:text-purple'}
                 `}
               >
-                {skill.title}
+                {typeof skill.title === 'object' ? (myLang ? skill.title.en : skill.title.es) : skill.title}
               </h3>
               <div className={`
                 relative p-6 rounded-full border-2 transition-all duration-500 h-4 w-4
-                ${flashStates[skill.title] ? 'border-[#e8e8e8]' : ''}
-                ${viewStates[skill.title] ? 'border-[#e8e8e8]' : 'border-[#666666] group-hover:border-grey'}
+                ${flashStates[typeof skill.title === 'object' ? (myLang ? skill.title.en : skill.title.es) : skill.title] ? 'border-[#e8e8e8]' : ''}
+                ${viewStates[typeof skill.title === 'object' ? (myLang ? skill.title.en : skill.title.es) : skill.title] ? 'border-[#e8e8e8]' : 'border-[#666666] group-hover:border-grey'}
               `}>
                 <div
                   className={`
@@ -115,8 +117,8 @@ const Skills: React.FC = () => {
                     transition-all
                     duration-500
                     origin-[100%_50%]
-                    ${flashStates[skill.title] ? 'bg-[#e8e8e8]' : ''}
-                    ${viewStates[skill.title]
+                    ${flashStates[typeof skill.title === 'object' ? (myLang ? skill.title.en : skill.title.es) : skill.title] ? 'bg-[#e8e8e8]' : ''}
+                    ${viewStates[typeof skill.title === 'object' ? (myLang ? skill.title.en : skill.title.es) : skill.title]
                       ? 'rotate-45 bg-[#e8e8e8] opacity-70'
                       : '-rotate-45 bg-[#666666] group-hover:bg-grey'
                     }
@@ -134,8 +136,8 @@ const Skills: React.FC = () => {
                     transition-all
                     duration-500
                     origin-[0%_50%]
-                    ${flashStates[skill.title] ? 'bg-[#e8e8e8]' : ''}
-                    ${viewStates[skill.title]
+                    ${flashStates[typeof skill.title === 'object' ? (myLang ? skill.title.en : skill.title.es) : skill.title] ? 'bg-[#e8e8e8]' : ''}
+                    ${viewStates[typeof skill.title === 'object' ? (myLang ? skill.title.en : skill.title.es) : skill.title]
                       ? '-rotate-45 bg-[#e8e8e8] -translate-x-2 opacity-70'
                       : 'rotate-45 bg-[#666666] group-hover:bg-grey'
                     }
@@ -147,12 +149,12 @@ const Skills: React.FC = () => {
               className={`
                 transition-all duration-1000 ease-in-out
                 overflow-hidden text-grey
-                ${viewStates[skill.title] ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}
+                ${viewStates[typeof skill.title === 'object' ? (myLang ? skill.title.en : skill.title.es) : skill.title] ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}
               `}
             >
               <p
-                className="mt-2 leading-7 w-[90%]"
-                dangerouslySetInnerHTML={{ __html: skill.description }}
+                className="mt-2 leading-5 md:leading-9 text-sm mid:text-xl w-[90%]"
+                dangerouslySetInnerHTML={{ __html: typeof skill.description === 'object' ? (myLang ? skill.description.en : skill.description.es) : skill.description }}
               />
             </div>
           </div>

@@ -1,15 +1,15 @@
 
-
-
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="favicon//favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/svg+xml" href="favicon//favicon.svg" />
+		<link rel="shortcut icon" href="favicon//favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon//apple-touch-icon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Motion clinic</title>
-
 	</head>
 	<body>
 		<slot />
@@ -18,12 +18,15 @@
 
 <style is:global>
 	@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans+Condensed:wght@200..900&display=swap');
 	html{
 		font-family: "Inter", serif;
 		scroll-behavior: smooth;
 	}
-	body{
-		background-color: #0000;
+	.reddit-sans-text{
+		font-family: "Reddit Sans Condensed", serif;
+		font-optical-sizing: auto;
+		font-style: normal;
 	}
 </style>
 

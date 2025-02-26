@@ -1,12 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useStore } from '@/store/storeGlobal';
 
 const WhoIs: React.FC = () => {
-    const IMAGE_HEIGHT = window.innerWidth > 768 ? 400 : window.innerWidth > 640 ? 300 : 200;
-    const MAX_WIDTH = window.innerWidth > 768 ? 400 : window.innerWidth > 640 ? 200 : 100;  
+    const IMAGE_HEIGHT = window.innerWidth > 768 ? 400 : window.innerWidth > 640 ? 200 : 150;
+    const MAX_WIDTH = window.innerWidth > 768 ? 400 : window.innerWidth > 640 ? 200 : 150;  
     const [progress, setProgress] = useState(0);
     const containerRef = useRef<HTMLDivElement>(null);
     const [targetProgress, setTargetProgress] = useState(0);
     const animationFrameRef = useRef<number | null>(null);
+    const { myLang } = useStore()
 
     useEffect(() => {
         const container = containerRef.current;
@@ -60,7 +62,9 @@ const WhoIs: React.FC = () => {
     return (
         <section ref={containerRef} className="h-[100vh] w-full pb-12 relative px-6 text-black flex items-center justify-center">
             <div className="flex items-center justify-center gap-2 relative">
-                <span className="font-medium truncate transition-all duration-300 text-xl xs:text-3xl sm:text-5xl lx:text-7xl">This is</span>
+               <div className="md:w-[150px] lg:w-[250px] flex justify-end">
+                 <span className="font-medium truncate transition-all duration-300 text-xl xs:text-3xl sm:text-5xl lx:text-7xl">{myLang ? 'This is':'El es'}</span>
+               </div>
                 <div className="transition-all duration-300 ease-out overflow-hidden flex items-center justify-center rounded-full">
                     <img
                         src="/img/Andres.jpg"
@@ -69,7 +73,7 @@ const WhoIs: React.FC = () => {
                         style={calculateStyles()} 
                     />
                 </div>
-                <span className="font-medium transition-all duration-300 text-xl xs:text-3xl sm:text-5xl lx:text-7xl">Andrés </span>
+                <span className="font-medium transition-all duration-300 text-xl xs:text-3xl sm:text-5xl lx:text-7xl">Andrés</span>
             </div>
         </section>
     );

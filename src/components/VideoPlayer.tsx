@@ -1,39 +1,12 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useRef } from 'react';
 
 const VideoPlayer: React.FC = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const [isInVideoArea, setIsInVideoArea] = useState(false);
-  const [isScrolling, setIsScrolling] = useState(false);
-  const [player, setPlayer] = useState<any>(null);
-  const [hasMouse, setHasMouse] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const checkForMouse = () => {
-      const mediaQuery = window.matchMedia('(pointer: fine)');
-      setHasMouse(mediaQuery.matches);
-
-      mediaQuery.addEventListener('change', e => {
-        setHasMouse(e.matches);
-      });
-
-      return () => mediaQuery.removeEventListener('change', e => {
-        setHasMouse(e.matches);
-      });
-    };
-
-    checkForMouse();
-  }, []);
-
-
-
-
+  
   return (
     <div   
       ref={containerRef}  
-      className="relative h-screen overflow-hidden bg-backBlack"  
-      style={{ cursor: hasMouse && isInVideoArea && !isPlaying && !isScrolling ? 'none' : 'default' }}  
+      className="relative h-screen overflow-hidden bg-backBlack"   
     >  
       <iframe  
         id="youtube-player"  
