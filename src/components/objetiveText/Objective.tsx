@@ -3,7 +3,7 @@ import ShinyText from './ShinyText';
 
 const Objective:React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const text = "#DoItAgain";
+  const text = "#DoItAgain.";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -12,7 +12,7 @@ const Objective:React.FC = () => {
           setIsVisible(entry.isIntersecting);
         });
       },
-      { threshold: 0.90, rootMargin: "200px 0px" }
+      { threshold: 0 }
     );
 
     const element = document.getElementById('reveal-section');
@@ -35,7 +35,7 @@ const Objective:React.FC = () => {
           {text.split('').map((char, index) => (
             <span
               key={`${char}-${index}`}
-              className="inline-block transition-all duration-300 ease-out h-36 font-bold reddit-sans-text "
+              className="inline-block transition-all duration-300 ease-out h-36 font-bold reddit-sans-text"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(50%)',

@@ -75,7 +75,7 @@ const Skills: React.FC = () => {
   return (
     <section className="bg-backBlack text-[#666666] px-6 pb-36">
       <div className='max-w-screen-2xl mx-auto'>
-        <h2 ref={h2Ref} className='text-4xl xs:text-6xl mid:text-7xl mb-32 pt-4 text-violet font-bold fade-element'>{ myLang ? 'Skills':'Habilidades' }</h2>
+        <h2 ref={h2Ref} className='text-4xl xs:text-6xl mid:text-7xl mb-32 pt-4 text-violet font-bold fade-element'>{ myLang ? 'Skills':'Tratamientos' }</h2>
         {skillsData.map((skill:Skill, i) => (
           <div
             className={`mt-8 hover:cursor-pointer pt-4 group ${

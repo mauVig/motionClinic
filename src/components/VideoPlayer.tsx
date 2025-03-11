@@ -10,7 +10,7 @@ const VideoPlayer: React.FC = () => {
     >  
       <iframe  
         id="youtube-player"  
-        src="https://www.youtube.com/embed/KULGrLXNu3E?enablejsapi=1"  
+        src="https://www.youtube.com/embed/Xw75tzZcqmY?enablejsapi=1"  
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full min-w-[100vw] min-h-[100vh] object-cover"  
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  
         allowFullScreen  

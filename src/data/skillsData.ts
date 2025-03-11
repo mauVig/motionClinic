@@ -10,8 +10,8 @@ export const skillsData: Skill[] = [
     {
         id:1,
         title:{
-            es:'Cirugia robotica mako',
-            en:'Mako robotic surgery'
+            es:'Cirugia Robotica MAKO',
+            en:'MAKO Robotic Surgery'
         },
         description:{
             es:`Máxima e inigualable precisión en reemplazos articulares de cadera y rodilla, utilizando el sistema robótico más avanzado del mundo, MAKO SmartRoboticsTM. Ofrece beneficios como menor dolor postoperatorio, incisiones mínimas y una colocación personalizada de los implantes. <span class="text-purple">Esto permite una recuperación más rápida, optimiza la funcionalidad, mejora la calidad de vida y prolonga la durabilidad de los implantes.</span>`,
@@ -31,13 +31,19 @@ export const skillsData: Skill[] = [
     },
     {
         id:2,
-        title:'Reemplazo articular convencional',
-        description:`Cirugías de reemplazo articular con técnicas tradicionales perfeccionadas para restaurar movilidad y aliviar dolor crónico por artrosis. <span class="text-purple">Enfocadas en resultados duraderos y recuperación funcional mediante procedimientos confiables y seguros.</span>`
+        title:{
+            es:'Reemplazo Articular Convencional',
+            en:'Conventional Joint Replacement'
+        },
+        description:{
+            es:'`Cirugías de reemplazo articular con técnicas tradicionales perfeccionadas para restaurar movilidad y aliviar dolor crónico por artrosis. <span class="text-purple">Enfocadas en resultados duraderos y recuperación funcional mediante procedimientos confiables y seguros.</span>`',
+            en:`Joint replacement surgeries with traditional techniques perfected to restore mobility and relieve chronic pain from osteoarthritis. <span class="text-purple">Focused on lasting results and functional recovery through reliable and safe procedures.</span>`
+        }
     },
     {
         id:3,
         title:{
-            es:'Medicina regenerativa',
+            es:'Medicina Regenerativa',
             en:'Regenerative Medicine'
         },
         description:{
@@ -48,7 +54,7 @@ export const skillsData: Skill[] = [
     {
         id:4,
         title:{
-            es:'Medicina deportiva',
+            es:'Medicina Deportiva',
             en:'Sports Medicine'
         },
         description:{
@@ -59,7 +65,7 @@ export const skillsData: Skill[] = [
     {
         id:5,
         title:{
-            es:'Prevencion de infecciones',
+            es:'Prevencion de Infecciones',
             en:'Infection Prevention'
         },
         description:{
@@ -70,7 +76,7 @@ export const skillsData: Skill[] = [
     {
         id:6,
         title:{
-            es:'Cierre de Heridas sin puntos (magic clousure)',
+            es:'Cierre de Heridas sin Puntos (Estético)',
             en:'Stitchless Wound Closure (magic clousure)'
         },
 

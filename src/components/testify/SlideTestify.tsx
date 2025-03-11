@@ -29,7 +29,7 @@ export const SlideTestify = () => {
             >
                 <SwiperSlide className="w-full h-full">
                     <img
-                        src="/img/cubeSlide/cube1.jpeg"
+                        src="/img/myClinic.jpg"
                         className="w-full h-full object-cover"
                     />
                 </SwiperSlide>
@@ -42,12 +42,6 @@ export const SlideTestify = () => {
                 <SwiperSlide className="w-full h-full">
                     <img
                         src="/img/cubeSlide/cube3.jpeg"
-                        className="w-full h-full object-cover"
-                    />
-                </SwiperSlide>
-                <SwiperSlide className="w-full h-full">
-                    <img
-                        src="/img/cubeSlide/cube4.jpeg"
                         className="w-full h-full object-cover"
                     />
                 </SwiperSlide>

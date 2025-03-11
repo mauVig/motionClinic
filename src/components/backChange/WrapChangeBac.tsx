@@ -1,60 +1,55 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import WhoIs from './WhoIs';
 import Experience from './Experience';
-import Objective from '../objetiveText/Objective'; 
-
+import Objective from '../objetiveText/Objective';
+import { motion, useTransform, useScroll } from 'motion/react';
 
 const WrapChangeBack: React.FC = () => {
-  const [backgroundProgress, setBackgroundProgress] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  
+  const COLOR_CHANGE_START = 0.2; 
 
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start start', 'end end'],
+  });
 
-    const handleScroll = () => {
-      const rect = container.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      // const colorChangeThreshold = window.innerWidth > 768 ? 0.1 : 0.1;
-      const colorChangeThreshold = 0.76;
+  const colorProgress = useTransform(
+    scrollYProgress,
+    [0, COLOR_CHANGE_START, 1],
+    [0, 0, 1],
+    { clamp: false }
+  );
 
-      let progress = 0;
-      if (rect.top <= -windowHeight * colorChangeThreshold) {
-        progress = Math.min(
-          1,
-          (-windowHeight * colorChangeThreshold - rect.top) / (windowHeight * 0.35)
-        );
-      }
+  const calculateBackground = (progress: number): string => {
+    const startR = 19;
+    const startG = 19;
+    const startB = 19;
+    const endR = 255;
+    const endG = 255;
+    const endB = 255;
 
-      setBackgroundProgress(progress);
-    };
+    const r = Math.round(startR + (endR - startR) * progress);
+    const g = Math.round(startG + (endG - startG) * progress);
+    const b = Math.round(startB + (endB - startB) * progress);
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const calculateBackground = (): string => {
-    const r = Math.round(19 + (232 - 19) * backgroundProgress);
-    const g = Math.round(19 + (232 - 19) * backgroundProgress);
-    const b = Math.round(19 + (232 - 19) * backgroundProgress);
-    
     return `rgb(${r}, ${g}, ${b})`;
   };
 
+  const backgroundColor = useTransform(colorProgress, (progress) => calculateBackground(progress));
+
   return (
-   
-    <section  
+    <motion.section
       ref={containerRef}
-      className="relative transition-colors duration-500"
-      style={{ backgroundColor: calculateBackground() }}
+      className="relative"
+      style={{ backgroundColor }}
     >
-			<div className="absolute -top-[150px] left-0 right-0 h-[150px] bg-gradient-to-t from-backBlack " />
+      <div className="absolute -top-[150px] left-0 right-0 h-[150px] bg-gradient-to-t from-backBlack " />
 
       <Objective />
       <Experience />
       <WhoIs />
-    </section>
+    </motion.section>
   );
 };
 

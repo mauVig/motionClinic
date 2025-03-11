@@ -41,10 +41,10 @@ export const Gallery = () => {
                 const rect = imgDiv.getBoundingClientRect();
                 const isVisible = rect.left < window.innerWidth && rect.right > 0;
                 const opacity = isVisible ? 1 : 0;
-                const scale = isVisible ? 1 : 0.85; // Start at 80% scale and grow to 100%
+                const scale = isVisible ? 1 : 0.85; 
 
                 imgDiv.style.opacity = opacity.toString();
-                imgDiv.style.transform = `scale(${scale})`; // Apply the scale transformation
+                imgDiv.style.transform = `scale(${scale})`; 
                 imgDiv.style.transition = 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out';
             });
         };
@@ -68,7 +68,7 @@ export const Gallery = () => {
                             className="w-[400px] flex-shrink-0 opacity-0"
                         >
                             <img
-                                src={`/img/gallery/gallery${(index % 7) + 1}.jpg`}
+                                src={`/img/gallery/gallery${index + 1}.jpg`}
                                 alt={`Galería ${index + 1}`}
                                 className={imageClasses[index % 7]}
                             />

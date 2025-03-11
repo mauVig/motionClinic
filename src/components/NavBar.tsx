@@ -5,7 +5,6 @@ import { useStore } from '@/store/storeGlobal';
 export const NavBar = () => {
   const { scrollDirection, isAtTop } = useScrollDirection();
   const { changeLanguage, myLang } = useStore()
-  const [isMobile, setisMobile] = useState(false);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [lang, setLang] = useState(false)
@@ -19,23 +18,12 @@ export const NavBar = () => {
     changeLanguage()
   }
 
-  useEffect(() => {
-    const handleResize = () => {
-        setisMobile(window.innerWidth < 1024);
-    };
 
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-        window.removeEventListener('resize', handleResize);
-    };
-  }, []);
   
   return (
     <>
       <header
-        className={`fixed top-0 z-40 w-full transition-all duration-300 ${
+        className={`fixed top-0 z-50 w-full transition-all duration-300 ${
           scrollDirection === 'down' && !isMenuOpen ? '-translate-y-[105%]' : 'translate-y-0'
         }`}
       >
@@ -44,7 +32,7 @@ export const NavBar = () => {
             !isAtTop ? 'backdrop-blur-sm' : ''
           }`}
         >
-         <div className='w-44 hidden mid:flex justify-start '> 
+         <div className='w-44 hidden sm:flex justify-start '> 
            <a href="#contact" className={`
               ${!isMenuOpen ? 'hover:bg-grey hover:text-violet' : 'hover:bg-violet hover:text-grey'}
               transition-all duration-1000
@@ -54,30 +42,28 @@ export const NavBar = () => {
              {myLang ? 'LET´S TALK' : 'HABLEMOS'}
            </a>
          </div>
-         <div className='w-44 flex justify-center'>
+         <div className='w-44 flex mid:justify-center'>
            <a href="#">
-             <img src="/svg/logo.svg" alt="Logo de Motion clinic" className="h-8" />
+             <img src="/svg/logo.svg" alt="Logo de Motion clinic" className="h-5 xs:h-6 mid:h-8" />
            </a>
          </div>
           <div className='w-44 flex justify-end'>
-
-            {!isMobile && (
-                <div className='text-lg text-grey flex gap-2 mr-8 items-center cursor-pointer' onClick={setLanguage}>
-                <span className={`transition-all duration-500 px-1 rounded-lg select-none
-                  ${ isMenuOpen && lang ? "relative before:content-[''] before:absolute before:w-full before:h-[2px] before:bottom-0 before:left-0 before:rounded-lg before:bg-grey" : ""}
-                  ${!isMenuOpen && lang ? 'bg-violet' : 'text-grey'}`
-                }>EN</span>
-                <span className="select-none">|</span>
-                <span className={`transition-all duration-500 px-1 rounded-lg select-none
-                  ${ isMenuOpen && !lang ? "relative before:content-[''] before:absolute before:w-full before:h-[2px] before:bottom-0 before:left-0 before:rounded-lg before:bg-grey" : ""}
-                  ${!isMenuOpen && !lang ? 'bg-violet' : 'text-grey'}`
-                }>ES</span>
-              </div>
-            )}
+            
+            <div className='text-base mid:text-lg text-grey flex gap-2 mr-8 items-center cursor-pointer' onClick={setLanguage}>
+              <span className={`transition-all duration-500 px-1 rounded-lg select-none
+                ${ isMenuOpen && lang ? "relative before:content-[''] before:absolute before:w-full before:h-[2px] before:bottom-0 before:left-0 before:rounded-lg before:bg-grey" : ""}
+                ${!isMenuOpen && lang ? 'bg-violet' : 'text-grey'}`
+              }>EN</span>
+              <span className="select-none">|</span>
+              <span className={`transition-all duration-500 px-1 rounded-lg select-none
+                ${ isMenuOpen && !lang ? "relative before:content-[''] before:absolute before:w-full before:h-[2px] before:bottom-0 before:left-0 before:rounded-lg before:bg-grey" : ""}
+                ${!isMenuOpen && !lang ? 'bg-violet' : 'text-grey'}`
+              }>ES</span>
+            </div>
           
             <div
               onClick={toggleMenu}
-              className="cursor-pointer relative w-16 h-4 select-none"
+              className="cursor-pointer relative w-12 mid:w-16 h-4 select-none"
             >
               <img
                 src="/svg/hambur.svg"
@@ -99,52 +85,39 @@ export const NavBar = () => {
       </header>
 
       <nav
-        className={`fixed top-0 right-0 z-10 h-screen w-full md:w-auto  bg-violet flex justify-start items-center transition-transform duration-300 ${
-          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed top-0 right-0 z-40 h-screen w-full md:w-auto  bg-violet flex justify-start items-center transition-transform duration-300 ${
+          isMenuOpen ? 'translate-x-0' : 'translate-x-[105%]'
         }`}
       >
         <div className='relative'>
-            {isMobile && (
-                <div className='text-lg text-grey flex gap-2 mr-8 items-center cursor-pointer absolute left-4 -top-20' onClick={setLanguage}>
-                <span className={`transition-all duration-500 px-1 rounded-lg select-none font-bold
-                  ${ isMenuOpen && lang ? "relative before:content-[''] before:absolute before:w-full before:h-[2px] before:bottom-0 before:left-0 before:rounded-lg before:bg-grey" : ""}
-                  ${!isMenuOpen && lang ? 'bg-violet' : 'text-grey'}`
-                }>EN</span>
-                <span className="select-none">|</span>
-                <span className={`transition-all duration-500 px-1 rounded-lg select-none font-bold
-                  ${ isMenuOpen && !lang ? "relative before:content-[''] before:absolute before:w-full before:h-[2px] before:bottom-0 before:left-0 before:rounded-lg before:bg-grey" : ""}
-                  ${!isMenuOpen && !lang ? 'bg-violet' : 'text-grey'}`
-                }>ES</span>
-              </div>
-            )}
-          <ul className="w-full">
+          <ul className="w-full xs:text-5xl text-4xl mid:text-6xl sm:text-7xl inline-block py-1 pl-4 pr-14 font-medium text-grey hover:text-backBlack hover:transition-all duration-300">
             <li className={`transform transition-all ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'}`} style={{transitionDelay: '0.1s'}} onClick={toggleMenu}>
-              <a href="" className="inline-block w-full text-7xl py-1 pl-4 pr-14 font-medium text-grey hover:text-backBlack hover:transition-all duration-300">
+              <a href="">
                 Home
               </a>
             </li>
             <li className={`transform transition-all ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'}`} style={{transitionDelay: '0.2s'}} onClick={toggleMenu}>
-              <a href="" className="inline-block w-full text-7xl py-1 pl-4 pr-14 font-medium text-grey hover:text-backBlack hover:transition-all duration-300">
+              <a href="">
                 Experience
               </a>
             </li>
             <li className={`transform transition-all ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'} truncate`} style={{transitionDelay: '0.3s'}} onClick={toggleMenu}>
-              <a href="" className="inline-block w-full text-7xl py-1 pl-4 pr-14 font-medium text-grey hover:text-backBlack hover:transition-all duration-300">
+              <a href="">
                 Who is Andrés?
               </a>
             </li>
             <li className={`transform transition-all ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'}`} style={{transitionDelay: '0.4s'}} onClick={toggleMenu}>
-              <a href="" className="inline-block w-full text-7xl py-1 pl-4 pr-14 font-medium text-grey hover:text-backBlack hover:transition-all duration-300">
+              <a href="">
                 Skills
               </a>
             </li>
             <li className={`transform transition-all ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'}`} style={{transitionDelay: '0.5s'}} onClick={toggleMenu}>
-              <a href="" className="inline-block w-full text-7xl py-1 pl-4 pr-14 font-medium text-grey hover:text-backBlack hover:transition-all duration-300">
+              <a href="">
                 Studio
               </a>
             </li>
             <li className={`transform transition-all ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'}`} style={{transitionDelay: '0.6s'}} onClick={toggleMenu}>
-              <a href="#contact" className="inline-block w-full text-7xl py-1 pl-4 pr-14 font-medium text-grey hover:text-backBlack hover:transition-all duration-300">
+              <a href="#contact">
                 Contacto
               </a>
             </li>

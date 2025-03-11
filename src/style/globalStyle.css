@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans+Condensed:wght&display=swap');
+
+html{
+  font-family: "Inter", serif;
+  scroll-behavior: smooth;
+}
+
+.reddit-sans-text{
+  font-family: "Reddit Sans Condensed", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
 .mySwiper {
   width: 100%;
   height: 100%;

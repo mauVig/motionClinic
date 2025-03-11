@@ -39,29 +39,34 @@ const Biography: React.FC = () => {
         <div className="pb-32 xl:grid xl:grid-cols-2 relative">
           <div className="fade-element">
             <span className="text-xs block transform -translate-y-4 ">{myLang ? 'BIOGRAPHY' : 'BIOGRAFIA'}</span>
-            <h1 className="text-3xl font-bold">Andrés Ananía</h1>
+            <h1 className="text-3xl font-bold">Andrés Anania</h1>
           </div>
          <div>
           <main>
              <p className="ml-4 mt-8 leading-5 text-xs fade-element">
-               {!myLang ? 'Soy Andrés Ananía, médico traumatólogo, subespecializado en las afecciones de la cadera y la rodilla. Mi formación incluye un AVP Fellowship en el Hospital for Special Surgery en Nueva York, un MBA en el IAE Business School, y programas ejecutivos en Harvard Business School y Stanford sobre transformación digital e inteligencia artificial aplicados a la salud. Con una sólida trayectoria en el campo de la innovación médica y experiencia en la adopción de nuevas tecnologías, mi objetivo es brindarte una atención de excelencia que combine vanguardia y cuidado personalizado para ayudarte a recuperar tu movilidad y calidad de vida.' : 'I am Andrés Ananía, an orthopedic doctor, subspecialized in hip and knee conditions. My training includes an AVP Fellowship at the Hospital for Special Surgery in New York, an MBA at the IAE Business School, and executive programs at Harvard Business School and Stanford on digital transformation and artificial intelligence applied to health. With a solid track record in the field of medical innovation and experience in the adoption of new technologies, my goal is to provide you with excellent care that combines cutting-edge and personalized care to help you regain your mobility and quality of life.'}
+               {!myLang ? 'Soy Andrés Anania, médico traumatólogo, subespecializado en las afecciones de la cadera y la rodilla. Mi formación incluye un AVP Fellowship en el Hospital for Special Surgery en Nueva York, un MBA en el IAE Business School, y programas ejecutivos en Harvard Business School y Stanford sobre transformación digital e inteligencia artificial aplicados a la salud. Con una sólida trayectoria en el campo de la innovación médica y experiencia en la adopción de nuevas tecnologías, mi objetivo es brindarte una atención de excelencia que combine vanguardia y cuidado personalizado para ayudarte a recuperar tu movilidad y calidad de vida.' : 'I am Andrés Ananía, an orthopedic doctor, subspecialized in hip and knee conditions. My training includes an AVP Fellowship at the Hospital for Special Surgery in New York, an MBA at the IAE Business School, and executive programs at Harvard Business School and Stanford on digital transformation and artificial intelligence applied to health. With a solid track record in the field of medical innovation and experience in the adoption of new technologies, my goal is to provide you with excellent care that combines cutting-edge and personalized care to help you regain your mobility and quality of life.'}
              </p>
           </main>
-           <div className="grid grid-cols-5 mt-4 fade-element">
-            <a href='https://aaot.org.ar/' target='_blank' rel='noreferrer'>
+          <div className="grid grid-cols-5 mt-4 fade-element text-xs leading-4">
+            <a href='https://aaot.org.ar/' target='_blank' rel='noreferrer' className='flex flex-col items-center text-center'>
               <img src="svg/acreditaciones-05.svg" className='h-28 transition-all duration-700 hover:scale-125 block mx-auto'  alt="aaot" />
+              <p>Miembro <br /> Certificado</p>
             </a>
-            <a href='https://acaro.org.ar/' target='_blank' rel='noreferrer'>
+            <a href='https://acaro.org.ar/' target='_blank' rel='noreferrer' className='flex flex-col items-center text-center'>
               <img src="svg/acreditaciones-04.svg" className='h-28 transition-all duration-700 hover:scale-125 block mx-auto'  alt="acaro" />
+              <p>Miembro <br /> Titular</p>
             </a>
-            <a href='https://aofoundation.org/'  target='_blank' rel='noreferrer'>
+            <a href='https://aofoundation.org/'  target='_blank' rel='noreferrer' className='flex flex-col items-center text-center'>
               <img src="svg/acreditaciones-03.svg" className='h-28 transition-all duration-700 hover:scale-125 block mx-auto'  alt="aofoundation" />
+              <p>Miembro <br /> Certificado</p>
             </a>
-            <a href='https://www.aaos.org/' target='_blank' rel='noreferrer'>
+            <a href='https://www.aaos.org/' target='_blank' rel='noreferrer' className='flex flex-col items-center text-center'>
               <img src="svg/acreditaciones-01.svg" className='h-28 transition-all duration-700 hover:scale-125 block mx-auto'  alt="aaos" />
+              <p>International <br /> Suergon Member</p>
             </a>
-            <a href='https://cartilage.org/' target='_blank' rel='noreferrer'>
+            <a href='https://cartilage.org/' target='_blank' rel='noreferrer' className='flex flex-col items-center text-center'>
               <img src="svg/acreditaciones-02.svg" className='h-28 transition-all duration-700 hover:scale-125 block mx-auto'  alt="cartilage" />
+              <p>Miembro <br /> Internacional</p>
             </a>
            </div>
          </div>
@@ -70,11 +75,7 @@ const Biography: React.FC = () => {
         <div className="pt-8 text-purple xl:grid xl:grid-cols-2">
           <div className="fade-element">
             <h2 className="text-6xl font-bold">
-              { myLang ? (
-                <span>The Perfect<br />Surgery</span>
-              ):(
-                <span>La cirugía <br />perfecta</span>
-              )}
+            The Perfect<br />Surgery
             </h2>
           </div>
           <p className="ml-4 mt-8 xs:text-xl fade-element">

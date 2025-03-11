@@ -48,11 +48,9 @@ export const TestifyVideos:React.FC = () => {
            </span>
          ): (
             <span>
-              Know the
+              Stories that 
               <br />
-              stories that
-              <br />
-              <span className="text-grey">move us</span>
+              <span className="text-grey">Inspire us</span>
             </span>
          )}
         </h2>
