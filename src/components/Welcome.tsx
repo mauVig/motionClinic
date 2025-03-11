@@ -39,7 +39,7 @@ export const Welcome = () => {
     return (
         <ParallaxProvider>
             <Parallax translateY={[-CSSEffect, CSSEffect]} className={st.back}>
-                <div className="min-h-screen max-w-screen-2xl mx-auto w-full relative px-6 text-grey">
+                <div  id="home" className="min-h-screen max-w-screen-2xl mx-auto w-full relative px-6 text-grey">
                     <div className={`absolute bottom-[10%] transition-all delay-500 duration-1000 ${textVisible ? 'translate-y-0': 'translate-y-8'}`} style={{ opacity: textOpacity, visibility: textVisible ? 'visible' : 'hidden' }}>
                         <h2 className={`text-6xl mid:text-8xl md:text-[8rem] lg:text-[10rem] font-bold w-32`} >
                             The perfect surgery

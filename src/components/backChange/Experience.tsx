@@ -67,7 +67,7 @@ const Experience: React.FC = () => {
   }, [sectionVisible, numberFlowValue]);
 
   return (
-    <section ref={sectionRef} className="w-full px-6 text-grey">
+    <section ref={sectionRef} className="w-full px-6 text-grey" id="experience">
       <div className="relative max-w-screen-2xl mx-auto">
         <div className="flex items-center justify-center text-center py-52">
           <div className="relative flex flex-col items-center z-20">

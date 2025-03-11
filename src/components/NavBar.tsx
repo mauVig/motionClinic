@@ -85,40 +85,40 @@ export const NavBar = () => {
       </header>
 
       <nav
-        className={`fixed top-0 right-0 z-40 h-screen w-full md:w-auto  bg-violet flex justify-start items-center transition-transform duration-300 ${
+        className={`fixed top-0 right-0 z-40 h-screen w-full md:w-auto bg-violet flex justify-start items-center transition-transform duration-300 ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-[105%]'
         }`}
       >
         <div className='relative'>
-          <ul className="w-full xs:text-5xl text-4xl mid:text-6xl sm:text-7xl inline-block py-1 pl-4 pr-14 font-medium text-grey hover:text-backBlack hover:transition-all duration-300">
-            <li className={`transform transition-all ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'}`} style={{transitionDelay: '0.1s'}} onClick={toggleMenu}>
-              <a href="">
-                Home
+          <ul className="w-full xs:text-5xl text-4xl mid:text-6xl sm:text-7xl inline-block py-1 pl-4 pr-14 font-medium text-grey ">
+            <li className={`transform transition-all  py-2 ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'} hover:text-backBlack hover:transition-all`} style={{transitionDelay: '0.1s'}} onClick={toggleMenu}>
+              <a href="#home">
+                {myLang ? 'Home' : 'Inicio'} 
               </a>
             </li>
-            <li className={`transform transition-all ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'}`} style={{transitionDelay: '0.2s'}} onClick={toggleMenu}>
-              <a href="">
-                Experience
+            <li className={`transform transition-all  py-2 ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'} hover:text-backBlack hover:transition-all`} style={{transitionDelay: '0.2s'}} onClick={toggleMenu}>
+              <a href="#experience">
+                {myLang ? 'Experience' : 'Experiencia'}
               </a>
             </li>
-            <li className={`transform transition-all ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'} truncate`} style={{transitionDelay: '0.3s'}} onClick={toggleMenu}>
-              <a href="">
-                Who is Andrés?
+            <li className={`transform transition-all  py-2 ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'} hover:text-backBlack hover:transition-all truncate`} style={{transitionDelay: '0.3s'}} onClick={toggleMenu}>
+              <a href="#whoIs">
+                {myLang ? 'Who is Andrés?' : 'Quién es Andrés?'}
               </a>
             </li>
-            <li className={`transform transition-all ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'}`} style={{transitionDelay: '0.4s'}} onClick={toggleMenu}>
-              <a href="">
-                Skills
+            <li className={`transform transition-all  py-2 ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'} hover:text-backBlack hover:transition-all`} style={{transitionDelay: '0.4s'}} onClick={toggleMenu}>
+              <a href="#skills">
+                {myLang ? 'Skills' : 'Tratamientos'}
               </a>
             </li>
-            <li className={`transform transition-all ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'}`} style={{transitionDelay: '0.5s'}} onClick={toggleMenu}>
-              <a href="">
-                Studio
+            <li className={`transform transition-all  py-2 ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'} hover:text-backBlack hover:transition-all`} style={{transitionDelay: '0.5s'}} onClick={toggleMenu}>
+              <a href="#studio">
+                {myLang ? 'Studio' : 'Estudio'}
               </a>
             </li>
-            <li className={`transform transition-all ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'}`} style={{transitionDelay: '0.6s'}} onClick={toggleMenu}>
+            <li className={`transform transition-all  py-2 ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'} hover:text-backBlack hover:transition-all`} style={{transitionDelay: '0.6s'}} onClick={toggleMenu}>
               <a href="#contact">
-                Contacto
+                {myLang ? 'Contact' : 'Contacto'}
               </a>
             </li>
           </ul>

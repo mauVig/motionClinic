@@ -74,7 +74,7 @@ const ContactForm: React.FC = () => {
     };
 
     return (
-        <aside className='bg-grey relative z-20 text-black p-6 border-b-violet' id="contact">
+        <aside id='contact' className='bg-grey relative z-20 text-black p-6 border-b-violet' id="contact">
             <div className='max-w-screen-2xl mx-auto'>
                 <form onSubmit={handleSubmit}>
                     <div className='md:grid md:grid-cols-2'>

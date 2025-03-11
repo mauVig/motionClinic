@@ -33,7 +33,7 @@ export const ClinicTestify = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-[#cccccc] w-full relative text-black flex justify-center items-center py-6">
+    <section ref={sectionRef} id='studio' className="bg-[#cccccc] w-full relative text-black flex justify-center items-center py-6">
       <div className="px-6">
         <h2 ref={titleRef} className="pb-4 slide-element">
           <span  className="text-xl font-medium ">

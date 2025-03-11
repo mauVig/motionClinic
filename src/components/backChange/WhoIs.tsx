@@ -19,7 +19,7 @@ const WhoIs: React.FC = () => {
   const opacity = useTransform(scrollYProgress, [0, 1], [0, 1.8]);
 
   return (
-    <section ref={containerRef} className="h-[100vh] w-full pb-12 relative px-6 text-black flex items-center justify-center">
+    <section ref={containerRef} id='whoIs' className="h-[100vh] w-full pb-12 relative px-6 text-black flex items-center justify-center">
       <div className="flex items-center justify-center gap-2 relative">
         <div className="md:w-[150px] lg:w-[250px] flex justify-end">
           <span className="font-medium truncate transition-all duration-300 text-xl xs:text-3xl sm:text-5xl lx:text-7xl">{myLang ? 'This is' : 'El es'}</span>
