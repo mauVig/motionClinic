@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useStore } from '@/store/storeGlobal';
 import { motion, useTransform, useScroll } from 'motion/react';
 
