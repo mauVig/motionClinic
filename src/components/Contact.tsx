@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useStore } from "@/store/storeGlobal";
+import { sendEmail } from "@/actions/emails";
 
 const ContactForm: React.FC = () => {
     const { myLang } = useStore();
@@ -66,12 +67,14 @@ const ContactForm: React.FC = () => {
         const isTelefonoValid = validateTelefono();
         const isMensajeValid = validateMensaje();
 
-        if (isUsernameValid && isEmailValid && isTelefonoValid && isMensajeValid) {
-            // Aquí puedes enviar el formulario
-            console.log('Formulario válido');
+        if ( isUsernameValid && isEmailValid && isTelefonoValid && isMensajeValid ) {
+            try {
+                sendEmail({ username, email, telefono, mensaje });
+            } catch (error) {
+                console.error('Error sending email', error);
+            }
         } else {
-            console.log('Formulario inválido');
-            // myFocus.current && myFocus.current.focus();
+            console.error('Formulario inválido');
         }
     };
 
