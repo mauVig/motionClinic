@@ -8,6 +8,7 @@ interface StoreState {
     getLanguage: () => boolean;
     changeLoading: () => void;
     getLoading: () => boolean;
+    myFocus: () => void;
 }
 
 export const useStore = create<StoreState>((set, get) => ({
@@ -17,4 +18,8 @@ export const useStore = create<StoreState>((set, get) => ({
     getLanguage: () => get().myLang,
     changeLoading: () => set((state: { loading: boolean }) => ({ loading: !state.loading })),
     getLoading: () => get().loading,
+    myFocus: () => { 
+        const username = document.getElementById('username') as HTMLInputElement;
+        username.focus();
+    }
 }))

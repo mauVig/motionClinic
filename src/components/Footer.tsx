@@ -1,9 +1,12 @@
 import React from 'react';
+import { useStore } from "@/store/storeGlobal";
+
 
 const Footer: React.FC = () => {
   const year = new Date().getFullYear();
   const yearString = year.toString();
   const formattedYear = yearString.slice(0, 2) + ' ' + yearString.slice(2);
+  const { myFocus } = useStore();
 
   return (
     <footer
@@ -27,7 +30,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div>
-          <button className="px-8 xl:px-24 py-2 bg-grey text-black rounded-full text-2xl truncate buttom">LET´S TALK</button>
+          <button className="px-8 xl:px-24 py-2 bg-grey text-black rounded-full text-2xl truncate buttom" onClick={myFocus}>LET´S TALK</button>
         </div>
       </div>
       <style >{`

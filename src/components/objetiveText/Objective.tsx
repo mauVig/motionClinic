@@ -12,7 +12,7 @@ const Objective:React.FC = () => {
           setIsVisible(entry.isIntersecting);
         });
       },
-      { threshold: 0 }
+      { threshold: 0.4 }
     );
 
     const element = document.getElementById('reveal-section');

@@ -57,6 +57,7 @@ const ContactForm: React.FC = () => {
         setMensajeError('');
         return true;
     };
+    
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -70,11 +71,12 @@ const ContactForm: React.FC = () => {
             console.log('Formulario válido');
         } else {
             console.log('Formulario inválido');
+            // myFocus.current && myFocus.current.focus();
         }
     };
 
     return (
-        <aside id='contact' className='bg-grey relative z-20 text-black p-6 border-b-violet' id="contact">
+        <aside id='contact' className='bg-grey relative z-20 text-black p-6 border-b-violet'>
             <div className='max-w-screen-2xl mx-auto'>
                 <form onSubmit={handleSubmit}>
                     <div className='md:grid md:grid-cols-2'>

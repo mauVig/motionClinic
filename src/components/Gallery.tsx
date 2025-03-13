@@ -64,7 +64,9 @@ export const Gallery = () => {
                     {[...Array(14)].map((_, index) => (
                         <div
                             key={index}
-                            ref={el => imageRefs.current[index] = el}
+                            ref={el => {
+                                if (el) imageRefs.current[index] = el;
+                            }}
                             className="w-[400px] flex-shrink-0 opacity-0"
                         >
                             <img
