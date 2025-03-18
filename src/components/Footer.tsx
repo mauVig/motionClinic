@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStore } from "@/store/storeGlobal";
+import { useStore } from "@/store/storeGlobal.ts";
 
 
 const Footer: React.FC = () => {

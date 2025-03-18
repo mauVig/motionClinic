@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useStore } from "@/store/storeGlobal";
-import { sendEmail } from "@/actions/emails";
+import { useStore } from "@/store/storeGlobal.ts";
+import { sendEmail } from "@/actions/emails.ts";
 
 const ContactForm: React.FC = () => {
     const { myLang } = useStore();

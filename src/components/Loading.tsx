@@ -1,5 +1,5 @@
 import { MutatingDots } from "react-loader-spinner";
-import { useStore } from "@/store/storeGlobal";
+import { useStore } from "@/store/storeGlobal.ts";
 import { useEffect, useState, useRef } from "react";
 
 export const Loading = () => {

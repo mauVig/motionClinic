@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { useStore } from '@/store/storeGlobal';
+import { useStore } from '@/store/storeGlobal.ts';
 
 export const ClinicTestify = () => {
   const { myLang } = useStore();
@@ -47,7 +47,7 @@ export const ClinicTestify = () => {
         <img src="/img/cubeSlide/cube1.jpeg" alt="picture of the" className="w-full" />
         <div className="flex items-center gap-4 pt-4">
           <img src="/img/locationIcon.svg" className="w-8" alt="Logo location" />
-          <p className="block font-medium w-44">LA IMPRENTA - Maure 1608, Piso 2. </p>
+          <p className="block font-medium w-44">LA IMPRENTA <br /> Maure 1608, Piso 2. </p>
         </div>
       </div>
       <style>{`

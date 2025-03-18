@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import ShinyText from './ShinyText';
+import ShinyText from './ShinyText.tsx';
 
 const Objective:React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const text = "#DoItAgain.";
+  const text = `#DoItAgain.`;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -12,7 +12,7 @@ const Objective:React.FC = () => {
           setIsVisible(entry.isIntersecting);
         });
       },
-      { threshold: 0.4 }
+      { threshold: 0.5 }
     );
 
     const element = document.getElementById('reveal-section');

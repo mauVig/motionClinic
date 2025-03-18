@@ -8,7 +8,7 @@ import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
 
 export const SlideTestify = () => {
     return (
-        <div className='w-full h-screen relative'> 
+        <div className=' relative'> 
             <Swiper
                 spaceBetween={0}
                 effect={'fade'}
@@ -25,7 +25,7 @@ export const SlideTestify = () => {
                     nextEl: '.swiper-button-next-custom',
                 }}
                 modules={[EffectFade, Autoplay, Pagination, Navigation]}
-                className="mySwiper h-full w-full"
+                className="mySwiper"
             >
                 <SwiperSlide className="w-full h-full">
                     <img

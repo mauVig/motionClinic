@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import useScrollDirection from '@/hooks/navHook';
-import { useStore } from '@/store/storeGlobal';
+import useScrollDirection from '@/hooks/navHook.ts';
+import { useStore } from '@/store/storeGlobal.ts';
 
 export const NavBar = () => {
   const { scrollDirection, isAtTop } = useScrollDirection();
@@ -99,32 +99,32 @@ export const NavBar = () => {
       >
         <div className='relative'>
           <ul className="w-full text-4xl xs:text-[2.8rem] mid:text-[3.6rem] mid:leading-[3.3rem] sm:text-7xl inline-block py-1 pl-4 pr-14 font-medium text-grey ">
-            <li className={`transform transition-all py-2 ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'} hover:text-backBlack hover:transition-all`} style={{transitionDelay: '0.1s'}} onClick={toggleMenu}>
+            <li className={`transform transition-all py-2 ${isMenuOpen ? 'opacity-100' : 'opacity-0'} hover:text-backBlack hover:transition-all`} style={{transitionDelay: '0.1s'}} onClick={toggleMenu}>
               <a href="#">
                 {myLang ? 'Home' : 'Inicio'} 
               </a>
             </li>
-            <li className={`transform transition-all py-2 ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'} hover:text-backBlack hover:transition-all`} style={{transitionDelay: '0.2s'}} onClick={toggleMenu}>
+            <li className={`transform transition-all py-2 ${isMenuOpen ? 'opacity-100' : 'opacity-0'} hover:text-backBlack hover:transition-all`} style={{transitionDelay: '0.2s'}} onClick={toggleMenu}>
               <a href="#experience">
                 {myLang ? 'Experience' : 'Experiencia'}
               </a>
             </li>
-            <li className={`transform transition-all py-2 ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'} hover:text-backBlack hover:transition-all truncate`} style={{transitionDelay: '0.3s'}} onClick={toggleMenu}>
+            <li className={`transform transition-all py-2 ${isMenuOpen ? 'opacity-100' : 'opacity-0'} hover:text-backBlack hover:transition-all truncate`} style={{transitionDelay: '0.3s'}} onClick={toggleMenu}>
               <a href="#whoIs">
                 {myLang ? 'Who is Andrés?' : 'Quién es Andrés?'}
               </a>
             </li>
-            <li className={`transform transition-all py-2 ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'} hover:text-backBlack hover:transition-all`} style={{transitionDelay: '0.4s'}} onClick={toggleMenu}>
+            <li className={`transform transition-all py-2 ${isMenuOpen ? 'opacity-100' : 'opacity-0'} hover:text-backBlack hover:transition-all`} style={{transitionDelay: '0.4s'}} onClick={toggleMenu}>
               <a href="#skills">
                 {myLang ? 'Skills' : 'Tratamientos'}
               </a>
             </li>
-            <li className={`transform transition-all py-2 ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'} hover:text-backBlack hover:transition-all`} style={{transitionDelay: '0.5s'}} onClick={toggleMenu}>
+            <li className={`transform transition-all py-2 ${isMenuOpen ? 'opacity-100' : 'opacity-0'} hover:text-backBlack hover:transition-all`} style={{transitionDelay: '0.5s'}} onClick={toggleMenu}>
               <a href="#studio">
                 {myLang ? 'Studio' : 'Estudio'}
               </a>
             </li>
-            <li className={`transform transition-all py-2 ${isMenuOpen ? 'duration-500 opacity-100' : 'opacity-0'} hover:text-backBlack hover:transition-all`} style={{transitionDelay: '0.6s'}} onClick={toggleMenu}>
+            <li className={`transform transition-all py-2 ${isMenuOpen ? 'opacity-100' : 'opacity-0'} hover:text-backBlack hover:transition-all`} style={{transitionDelay: '0.6s'}} onClick={toggleMenu}>
               <a href="#contact"  onClick={lestsTalk}>
                 {myLang ? 'Contact' : 'Contacto'}
               </a>

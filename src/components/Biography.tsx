@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { useStore } from '@/store/storeGlobal';
+import { useStore } from '@/store/storeGlobal.ts';
 
 const Biography: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -48,25 +48,25 @@ const Biography: React.FC = () => {
              </p>
           </main>
           <div className="grid grid-cols-5 mt-4 fade-element text-xs leading-4">
-            <a href='https://aaot.org.ar/' target='_blank' rel='noreferrer' className='flex flex-col items-center text-center'>
-              <img src="svg/acreditaciones-05.svg" className='h-28 transition-all duration-700 hover:scale-125 block mx-auto'  alt="aaot" />
-              <p>Miembro <br /> Certificado</p>
+            <a href='https://aaot.org.ar/' target='_blank' rel='noreferrer' className='flex flex-col items-center text-center transition-all duration-700 hover:scale-125'>
+              <img src="svg/acreditaciones-05.svg" className='h-28 block mx-auto'  alt="aaot" />
+              <p className="whitespace-pre-line">{myLang ? 'Certified \n Member' : 'Miembro \n Certificado'}</p>
             </a>
-            <a href='https://acaro.org.ar/' target='_blank' rel='noreferrer' className='flex flex-col items-center text-center'>
-              <img src="svg/acreditaciones-04.svg" className='h-28 transition-all duration-700 hover:scale-125 block mx-auto'  alt="acaro" />
-              <p>Miembro <br /> Titular</p>
+            <a href='https://acaro.org.ar/' target='_blank' rel='noreferrer' className='flex flex-col items-center text-center transition-all duration-700 hover:scale-125 '>
+              <img src="svg/acreditaciones-04.svg" className='h-28 block mx-auto'  alt="acaro" />
+              <p className="whitespace-pre-line">{myLang ? 'Full\n Member' : 'Miembro \nTitular'}</p>
             </a>
-            <a href='https://aofoundation.org/'  target='_blank' rel='noreferrer' className='flex flex-col items-center text-center'>
-              <img src="svg/acreditaciones-03.svg" className='h-28 transition-all duration-700 hover:scale-125 block mx-auto'  alt="aofoundation" />
-              <p>Miembro <br /> Certificado</p>
+            <a href='https://aofoundation.org/'  target='_blank' rel='noreferrer' className='flex flex-col items-center text-center transition-all duration-700 hover:scale-125 '>
+              <img src="svg/acreditaciones-03.svg" className='h-28 block mx-auto'  alt="aofoundation" />
+              <p className="whitespace-pre-line">{myLang ? 'Certified\n Member' : 'Miembro\n Certificado'}</p>
             </a>
-            <a href='https://www.aaos.org/' target='_blank' rel='noreferrer' className='flex flex-col items-center text-center'>
-              <img src="svg/acreditaciones-01.svg" className='h-28 transition-all duration-700 hover:scale-125 block mx-auto'  alt="aaos" />
-              <p>International <br /> Suergon Member</p>
+            <a href='https://www.aaos.org/' target='_blank' rel='noreferrer' className='flex flex-col items-center text-center transition-all duration-700 hover:scale-125 '>
+              <img src="svg/acreditaciones-01.svg" className='h-28 block mx-auto'  alt="aaos" />
+              <p className="whitespace-pre-line">{myLang ? 'International\n Suergon Member' : 'Cirujano Ortopedista\n Internacional'}</p>
             </a>
-            <a href='https://cartilage.org/' target='_blank' rel='noreferrer' className='flex flex-col items-center text-center'>
-              <img src="svg/acreditaciones-02.svg" className='h-28 transition-all duration-700 hover:scale-125 block mx-auto'  alt="cartilage" />
-              <p>Miembro <br /> Internacional</p>
+            <a href='https://cartilage.org/' target='_blank' rel='noreferrer' className='flex flex-col items-center text-center transition-all duration-700 hover:scale-125 '>
+              <img src="svg/acreditaciones-02.svg" className='h-28 block mx-auto'  alt="cartilage" />
+              <p className="whitespace-pre-line">{myLang ? 'Miembro\n Internacional' : 'International \n Member'}</p>
             </a>
            </div>
          </div>
@@ -79,7 +79,7 @@ const Biography: React.FC = () => {
             </h2>
           </div>
           <p className="ml-4 mt-8 xs:text-xl fade-element">
-            {myLang ? 'Introducing the Smart Joint: a revolution in joint replacement. With Stryker Mako Smart Robotics technology, each knee and hip replacement is precisely tailored to the individual needs of each patient, ensuring maximum range of motion and safety. By leveraging Data Analytics and advanced robotics, through Smart Joint we restore natural movement minimizing complications, setting a new standard for life-changing results. This is the future of joint replacement—personalized, precise, and perfected.': 'Introducing the Smart Joint:  Una revolución en la sustitución de articulaciones. Con la tecnología de Stryker Mako Smart Robotics, cada reemplazo de rodilla y cadera se adapta de manera precisa a las necesidades individuales de cada paciente, asegurando el máximo rango de movimiento y seguridad. Aprovechando el análisis de datos y la robótica avanzada, a través de Smart Joint restauramos el movimiento natural minimizando las complicaciones, estableciendo un nuevo estándar con resultados que cambiarán tu vida. Este es el futuro de la sustitución de articulaciones: personalizado, preciso y perfeccionado.'}
+            {myLang ? "Introducing The Smart Joint: A revolution in joint replacement surgery. With Stryker's robotic arm, MAKO SmartRobotics™, every hip and knee replacement is precisely tailored to each patient's individual needs, ensuring maximum range of motion and safety. Through data analysis and advanced robotics, with The Smart Joint, we restore natural movement, minimize complications, and set a new standard with life-changing results. This is the future of joint replacement: personalized, precise, and perfected.": "Te presentamos “The Smart Joint”: Una revolución en las cirugías de SmartRoboticsTM, cada reemplazo de cadera y rodilla se adapta de manera precisa a las necesidades individuales de cada paciente, asegurando el máximo rango de movimiento y seguridad. Aprovechando el análisis de datos y la robótica avanzada, a través de “Smart Joint” restauramos el movimiento natural minimizando las complicaciones, estableciendo un nuevo estándar con resultados que cambiarán tu vida. Este es el futuro de los de articulares: personalizado, preciso y perfeccionado."}
           </p>
         </div>
       </div>

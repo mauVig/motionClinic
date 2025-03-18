@@ -1,4 +1,4 @@
-import { useStore } from "@/store/storeGlobal";
+import { useStore } from "@/store/storeGlobal.ts";
 
 export const ShinyText = ({ disabled = false, speed = 500, className = '' }) => {
   const { myLang } = useStore();

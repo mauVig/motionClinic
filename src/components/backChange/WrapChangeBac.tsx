@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
-import WhoIs from './WhoIs';
-import Experience from './Experience';
-import Objective from '../objetiveText/Objective';
+import WhoIs from './WhoIs.tsx';
+import Experience from './Experience.tsx';
+import Objective from '../objetiveText/Objective.tsx';
 import { motion, useTransform, useScroll } from 'motion/react';
 
 const WrapChangeBack: React.FC = () => {

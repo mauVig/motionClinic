@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import NumberFlow from '@number-flow/react';
-import { useStore } from '@/store/storeGlobal';
+import { useStore } from '@/store/storeGlobal.ts';
 import {
   motion,
   MotionValue,
@@ -83,32 +83,32 @@ const Experience: React.FC = () => {
             </h2>
 
             <p className="block mt-4 max-w-[400px] text-[.7rem] xs:text-xs mid:text-xs lx:text-base">
-              {!myLang ? 'Lograr resultados funcionales y personalizados, específicamente diseñados para cada paciente. Cada persona es única.' : 'Achieve functional and personalized results, specifically designed for each patient. Each person is unique.'}
+              {!myLang ? 'Logramos resultados funcionales y personalizados, específicamente diseñados para cada paciente. Cada persona es única.' : 'We achieve functional and personalized results, specifically designed for each patient. Each person is unique.'}
             </p>
           </div>
         </div>
         <motion.img
           src="/img/clinic-cell.jpg"
           alt=""
-          className="h-28 mid:h-32 md:h-60 absolute top-0 right-10"
+          className="h-28 mid:h-32 sm:h-40 lx:h-60 absolute top-0 right-5 lx:right-10"
           style={{ y }}
         />
         <motion.img
           src="/img/clinic2-cell.jpg"
           alt=""
-          className="h-32 mid:h-32 md:h-60 absolute top-14"
+          className="h-32 mid:h-32 sm:h-40 lx:h-60 absolute top-14 z-20"
           style={{ y }}
         />
         <motion.img
           src="/img/clinic3-cell.jpg"
           alt=""
-          className="h-28 mid:h-24 md:h-48 absolute bottom-12 right-12"
+          className="h-28 mid:h-24 lx:h-48 absolute bottom-12 right-12 z-20"
           style={{ y }}
         />
         <motion.img
           src="/img/clinic4-cell.jpg"
           alt=""
-          className="h-28 mid:h-48 md:h-72 absolute bottom-6"
+          className="h-28 xl:h-60 lx:h-72 absolute bottom-6"
           style={{ y }}
         />
       </div>

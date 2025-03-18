@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-export const Gallery = () => {
+export const Gallery: React.FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const sectionRef = useRef<HTMLDivElement>(null);
     const imageRefs = useRef<HTMLDivElement[]>([]);
