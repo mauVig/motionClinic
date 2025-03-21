@@ -96,13 +96,13 @@ const Experience: React.FC = () => {
         <motion.img
           src="/img/clinic2-cell.jpg"
           alt=""
-          className="h-32 mid:h-32 sm:h-40 lx:h-60 absolute top-14 z-20"
+          className="h-24 mid:h-32 sm:h-40 lx:h-60 absolute top-14 z-20"
           style={{ y }}
         />
         <motion.img
           src="/img/clinic3-cell.jpg"
           alt=""
-          className="h-28 mid:h-24 lx:h-48 absolute bottom-12 right-12 z-20"
+          className="h-16 mid:h-24 lx:h-48 absolute bottom-12 right-12 z-20"
           style={{ y }}
         />
         <motion.img

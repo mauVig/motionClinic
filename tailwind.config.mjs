@@ -8,9 +8,14 @@ export default {
 					'0%': { 'background-position': '100%' },
 					'100%': { 'background-position': '-100%' },
 				},
+				rotation:{
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' },
+				}
 			},
 			animation: {
 				shine: 'shine 5s linear infinite',
+				rotation: 'rotation 2s linear infinite',
 			},
 		},
 		screens: {

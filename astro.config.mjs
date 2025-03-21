@@ -16,6 +16,6 @@ export default defineConfig({
   }),
 
   vite: {
-    envPrefix: 'RESEND_',
+    envPrefix: 'EMAIL_',
   },
 });

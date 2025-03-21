@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { use, useRef, useState } from 'react';
 import { useStore } from "@/store/storeGlobal.ts";
-import { sendEmail } from "@/actions/emails.ts";
+import emailjs from '@emailjs/browser';
+
 
 const ContactForm: React.FC = () => {
     const { myLang } = useStore();
@@ -12,6 +13,10 @@ const ContactForm: React.FC = () => {
     const [emailError, setEmailError] = useState('');
     const [telefonoError, setTelefonoError] = useState('');
     const [mensajeError, setMensajeError] = useState('');
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isLoadind, setIsLoading] = useState(false);
+    
+    const form = useRef<HTMLFormElement>(null);
 
     const validateUsername = () => {
         if (!username) {
@@ -58,30 +63,54 @@ const ContactForm: React.FC = () => {
         setMensajeError('');
         return true;
     };
-    
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         const isUsernameValid = validateUsername();
         const isEmailValid = validateEmail();
         const isTelefonoValid = validateTelefono();
         const isMensajeValid = validateMensaje();
-
+        
         if ( isUsernameValid && isEmailValid && isTelefonoValid && isMensajeValid ) {
-            try {
-                sendEmail({ username, email, telefono, mensaje });
-            } catch (error) {
-                console.error('Error sending email', error);
-            }
+            setIsLoading(true);
+
+            emailjs.sendForm(
+                import.meta.env.EMAIL_SERVICE_ID,
+                import.meta.env.EMAIL_TEMPLATE_ID,
+                form.current!,
+                {
+                    publicKey: import.meta.env.EMAIL_PUBLIC_KEY,
+                }
+            ).then(
+                () => {
+                    console.log('SUCCESS!');
+                    setIsLoading(false);
+                    setIsSubmitted(true);
+
+                    setUsername('');
+                    setEmail('');
+                    setTelefono('');
+                    setMensaje(''); 
+                },
+                (error) => {
+                  console.log('FAILED...', error);
+                  setIsLoading(false);
+                  setIsSubmitted(false);
+                },
+            );
+
+
         } else {
             console.error('Formulario inválido');
         }
+
+
     };
 
     return (
         <aside id='contact' className='bg-grey relative z-20 text-black p-6 border-b-violet'>
             <div className='max-w-screen-2xl mx-auto'>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} ref={form}>
                     <div className='md:grid md:grid-cols-2'>
                         <h2 className='text-4xl font-bold'>
                             {!myLang ? (
@@ -102,7 +131,7 @@ const ContactForm: React.FC = () => {
                         <div className='relative my-10 mb-12'>
                             <input
                                 id='username'
-                                name='username'
+                                name='name'
                                 type='text'
                                 placeholder=''
                                 className='border-b bg-grey py-1 focus:border-blue-700 transition-colors focus:outline-none w-full'
@@ -134,7 +163,7 @@ const ContactForm: React.FC = () => {
                         <div className='relative my-10 mb-12 xl:pt-4'>
                             <input
                                 id='telefono'
-                                name='telefono'
+                                name='phone'
                                 type='text'
                                 placeholder=''
                                 className='border-b bg-grey py-1 focus:border-blue-700 transition-colors focus:outline-none w-full'
@@ -150,7 +179,7 @@ const ContactForm: React.FC = () => {
                         <div className='relative xl:my-10 my-16 '>
                             <textarea
                                 id='mensaje'
-                                name='mensaje'
+                                name='message'
                                 placeholder=''
                                 className='border-b bg-grey focus:border-blue-700 transition-colors focus:outline-none w-full resize-none'
                                 value={mensaje}
@@ -164,15 +193,27 @@ const ContactForm: React.FC = () => {
                         </div>
                     </div>
                     <div className='flex justify-start xl:justify-end items-center mt-10 group hover:cursor-pointer'>
-                        <button
-                            type='submit'
-                            className='bg-backBlack text-grey py-2 px-8 rounded-3xl group-hover:rounded-r-none transition-all duration-1000'
-                        >
-                            Enviar
-                        </button>
+                        {isSubmitted ? (
+                            <p className='bg-backBlack text-grey py-2 px-8 rounded-3xl '>Mensaje enviado !</p>
+                        ):(
+                            <button
+                                type='submit'
+                                className='bg-backBlack text-grey py-2 px-8 rounded-3xl group-hover:rounded-r-none transition-all duration-1000'
+                            >
+                                Enviar
+                            </button>
+                        )}
+                     
                         <div className='h-full'>
                             <div className='bg-backBlack flex justify-center items-center rounded-full group-hover:rounded-l-none p-3 transition-all duration-1000'>
-                                <img src='/svg/rightArrow-07.svg' alt='Arrow' className='h-4 w-4' />
+                            {isSubmitted ?? (
+                                 isLoadind ? (
+                                    <img src='/svg/rightArrow-07.svg' alt='Arrow' className='h-4 w-4 animate-shine' />
+                                ):(
+                                    <img src='/svg/rightArrow-07.svg' alt='Arrow' className='h-4 w-4' />
+                                )
+                            )}
+                        
                             </div>
                         </div>
                     </div>
