@@ -42,8 +42,8 @@ export const NavBar = () => {
         >
          <div className='w-44 hidden sm:flex justify-start'> 
            <a href="#contact" onClick={lestsTalk} className={`
+              transition-all duration-1000 
               ${!isMenuOpen ? 'hover:bg-grey hover:text-violet' : 'hover:bg-violet hover:text-grey'}
-              transition-all duration-1000
               ${!isMenuOpen ? 'bg-violet' : 'bg-grey'}
               ${isMenuOpen ? 'text-violet' : 'text-grey'}
               px-4 py-1 rounded-full`}>
@@ -129,7 +129,7 @@ export const NavBar = () => {
                 {myLang ? 'Contact' : 'Contacto'}
               </a>
             </li>
-            <li className={`w-44  sm:hidden  justify-start text-2xl  xs:text-3xl mid:text-4xl mt-6 transition-all ${isMenuOpen ? 'opacity-100' : 'opacity-0'}`} onClick={toggleMenu}> 
+            <li className={`sm:hidden  justify-start text-2xl  xs:text-3xl mid:text-4xl mt-6 transition-all ${isMenuOpen ? 'opacity-100' : 'opacity-0'}`} onClick={toggleMenu}> 
               <a href="#contact" className={`
                   ${!isMenuOpen ? 'hover:bg-grey hover:text-violet' : 'hover:bg-violet hover:text-grey'}
                   transition-all duration-1000

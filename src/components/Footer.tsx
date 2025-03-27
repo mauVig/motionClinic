@@ -23,10 +23,10 @@ const Footer: React.FC = () => {
         </div>
         <div className="flex justify-between w-44">
           <div className="flex items-end text-sm">
-            <a href="#">Linkedin</a>
+            <a href="https://www.linkedin.com/in/andres-anania?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Linkedin</a>
           </div>
           <div className="flex items-end text-sm">
-            <a href="#">Instagram</a>
+            <a href="https://www.instagram.com/motionclinic.ba?igsh=MTZzZzF4NXZpMDQzcQ%3D%3D&utm_source=qr">Instagram</a>
           </div>
         </div>
         <div>
