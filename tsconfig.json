@@ -1,7 +1,6 @@
 {
   "extends": "astro/tsconfigs/strict",
   "include": [
-    ".astro/types.d.ts",
     "**/*"
   ],
   "exclude": [
@@ -9,8 +8,6 @@
   ],
   "compilerOptions": {
     "target": "ESNext",
-    "module": "Node16",
-    "moduleResolution": "node16",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "baseUrl": ".",

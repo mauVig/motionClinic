@@ -3,7 +3,8 @@ import ShinyText from './ShinyText.tsx';
 
 const Objective:React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const text = `#DoItAgain.`;
+  // const text = `DoItAgain.`;
+  const text = `DOITAGAIN.`;
 
   useEffect(() => {
     const observer = new IntersectionObserver(

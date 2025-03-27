@@ -10,7 +10,7 @@ export const skillsData: Skill[] = [
     {
         id:1,
         title:{
-            es:'Cirugia Robotica MAKO',
+            es:'Cirugía Robótica MAKO',
             en:'MAKO Robotic Surgery'
         },
         description:{
@@ -36,7 +36,7 @@ export const skillsData: Skill[] = [
             en:'Conventional Joint Replacement'
         },
         description:{
-            es:'`Cirugías de reemplazo articular con técnicas tradicionales perfeccionadas para restaurar movilidad y aliviar dolor crónico por artrosis. <span class="text-purple">Enfocadas en resultados duraderos y recuperación funcional mediante procedimientos confiables y seguros.</span>`',
+            es:'Cirugías de reemplazo articular con técnicas tradicionales perfeccionadas para restaurar movilidad y aliviar dolor crónico por artrosis. <span class="text-purple">Enfocadas en resultados duraderos y recuperación funcional mediante procedimientos confiables y seguros.</span>',
             en:`Joint replacement surgeries with traditional techniques perfected to restore mobility and relieve chronic pain from osteoarthritis. <span class="text-purple">Focused on lasting results and functional recovery through reliable and safe procedures.</span>`
         }
     },
@@ -82,7 +82,7 @@ export const skillsData: Skill[] = [
 
         description:{
             es:`Tecnología de última generación en cierre de heridas quirúrgicas, sin necesidad de puntos. El sistema sella la herida de forma hermética, reduciendo significativamente el riesgo de infecciones. Además, maximiza el confort del paciente al no requerir curaciones diarias y permitir baños de higiene personal sin complicaciones. <span class="text-purple">Como resultado, se obtienen cicatrices mínimas y resultados estéticos impecables que mejoran la confianza y satisfacción del paciente.</span>`,
-            en:`State-of-the-art technology in surgical wound closure, without the need for stitches. The system seals the wound hermetically, significantly reducing the risk of infections. It also maximizes patient comfort by not requiring daily dressings and allowing personal hygiene baths without complications. <span class="text-purple">As a result, minimal scars and impeccable aesthetic results are obtained that improve patient confidence and satisfaction.</span>`
+            en:`State-of-the-art surgical techniques and technology in surgical wound closure, without the need for stitches. The system seals the wound hermetically, significantly reducing the risk of infections. It also maximizes patient comfort by not requiring daily dressings and allowing personal hygiene baths without complications. <span class="text-purple">As a result, minimal scars and impeccable aesthetic results are obtained that improve patient confidence and satisfaction.</span>`
         }
     },
 

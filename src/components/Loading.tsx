@@ -28,7 +28,7 @@ export const Loading = () => {
                 isVisible ? "opacity-100 visible" : "opacity-0 invisible"
             }`}
         >
-            <img src="/svg/logo.svg" alt="Logo de Motion clinic" className={`h-11 xs:h-14 mid:h-20  transition-all duration-1000 ${
+            <img src="/svg/logo.svg" alt="Logo de Motion clinic" className={`h-7 xs:h-10 mid:h-14 lx:h-20 transition-all duration-1000 ${
                 isVisible ? "sm:translate-y-0" : "sm:-translate-y-[26rem] sm:opacity-0 sm:scale-50 "
             }`} />
             <MutatingDots

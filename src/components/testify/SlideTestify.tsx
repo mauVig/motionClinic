@@ -7,6 +7,8 @@ import '@/style/globalStyle.css';
 import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
 
 export const SlideTestify = () => {
+    const isMobil = window.innerWidth < 768;
+
     return (
         <div className=' relative'> 
             <Swiper
@@ -27,21 +29,27 @@ export const SlideTestify = () => {
                 modules={[EffectFade, Autoplay, Pagination, Navigation]}
                 className="mySwiper"
             >
-                <SwiperSlide className="w-full h-full">
+                <SwiperSlide className="w-full">
                     <img
-                        src="/img/myClinic.jpg"
+                        src={`/img/cubeSlide/cube1${isMobil ? '-cell' : ''}.webp`}
                         className="w-full h-full object-cover"
                     />
                 </SwiperSlide>
-                <SwiperSlide className="w-full h-full">
+                <SwiperSlide className="w-full ">
                     <img
-                        src="/img/cubeSlide/cube2.jpeg"
+                        src={`/img/cubeSlide/cube2${isMobil ? '-cell' : ''}.webp`}
                         className="w-full h-full object-cover"
                     />
                 </SwiperSlide>
-                <SwiperSlide className="w-full h-full">
+                <SwiperSlide className="w-full ">
                     <img
-                        src="/img/cubeSlide/cube3.jpeg"
+                        src={`/img/cubeSlide/cube3${isMobil ? '-cell' : ''}.webp`}
+                        className="w-full h-full object-cover "
+                    />
+                </SwiperSlide>
+                <SwiperSlide className="w-full ">
+                    <img
+                        src={`/img/cubeSlide/cube4${isMobil ? '-cell' : ''}.webp`}
                         className="w-full h-full object-cover"
                     />
                 </SwiperSlide>

@@ -40,11 +40,11 @@ export const Welcome = () => {
         <ParallaxProvider>
             <Parallax translateY={[-CSSEffect, CSSEffect]} className={st.back}>
                 <div className="min-h-screen max-w-screen-2xl mx-auto w-full relative px-6 text-grey">
-                    <div className={`absolute bottom-[30%]  sm:bottom-[20%]  md:bottom-[15%] xl:bottom-[10%] transition-all delay-500 duration-1000 ${textVisible ? 'translate-y-0': 'translate-y-8'}`} style={{ opacity: textOpacity, visibility: textVisible ? 'visible' : 'hidden' }}>
+                    <div className={`absolute bottom-[30%] sm:bottom-[27%] md:bottom-[26%] lg:bottom-[25%] xl:bottom-[20%] transition-all delay-500 duration-1000 ${textVisible ? 'translate-y-0': 'translate-y-8'}`} style={{ opacity: textOpacity, visibility: textVisible ? 'visible' : 'hidden' }}>
                         <h2 className={`text-7xl mid:text-[5.5rem] sm:text-[7rem] md:text-[8rem] lg:text-[10rem] font-bold w-32`} style={{ lineHeight: '.8' }}>
                             The perfect surgery
                         </h2>
-                        <p className="text-[.9rem] mid:text-[1.2rem] sm:text-[1.6rem] md:text-[2rem] lg:text-[2.3rem] mt-6 lg:mt-8 ">
+                        <p className="text-[.8rem] mid:text-[.9rem] sm:text-[1.1rem] md:text-[1.4rem] lg:text-[1.8rem] mt-6 lg:mt-8 ">
                             {myLang ? (
                                 <>
                                     A masterpiece of modern hip and  
@@ -53,9 +53,9 @@ export const Welcome = () => {
                                 </>
                             ) : (
                                 <>
-                                    Una obra maestra de la cirugía
+                                    Primer Centro Integral de Cirugía Robótica
                                     <br />
-                                    moderna de cadera y rodilla.
+                                    en Cadera y Rodilla de Argentina.                                    
                                 </>
                             )}
                         </p>

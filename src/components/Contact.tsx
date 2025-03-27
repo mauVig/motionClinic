@@ -206,14 +206,11 @@ const ContactForm: React.FC = () => {
                      
                         <div className='h-full'>
                             <div className='bg-backBlack flex justify-center items-center rounded-full group-hover:rounded-l-none p-3 transition-all duration-1000'>
-                            {isSubmitted ?? (
-                                 isLoadind ? (
-                                    <img src='/svg/rightArrow-07.svg' alt='Arrow' className='h-4 w-4 animate-shine' />
-                                ):(
-                                    <img src='/svg/rightArrow-07.svg' alt='Arrow' className='h-4 w-4' />
-                                )
+                            {isLoadind ? (
+                                <img src='/svg/rightArrow-07.svg' alt='Arrow' className='h-4 w-4 animate-shine' />
+                            ):(
+                                <img src='/svg/rightArrow-07.svg' alt='Arrow' className='h-4 w-4' />
                             )}
-                        
                             </div>
                         </div>
                     </div>

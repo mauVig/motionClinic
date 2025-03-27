@@ -19,7 +19,7 @@ const WhoIs: React.FC = () => {
   return (
     <section ref={containerRef} id='whoIs' className="h-[100vh] w-full pb-12 relative px-6 text-black flex items-center justify-center overflow-hidden">
       <div className="flex items-center justify-center gap-2 relative">
-        <div className="flex justify-end">
+        <div className="flex justify-end w-[200px] ">
           <span className="font-medium truncate transition-all duration-300 text-xl xs:text-3xl sm:text-5xl lx:text-7xl">{myLang ? 'This is' : 'El es'}</span>
         </div>
         <motion.div
@@ -32,7 +32,9 @@ const WhoIs: React.FC = () => {
             className="object-cover rounded-full "
           />
         </motion.div>
-        <span className="font-medium transition-all duration-300 text-xl xs:text-3xl sm:text-5xl lx:text-7xl">Andrés</span>
+        <div className="w-[200px] ">
+          <span className="font-medium transition-all duration-300 text-xl xs:text-3xl sm:text-5xl lx:text-7xl">Andrés</span>
+        </div>
       </div>
     </section>
   );
