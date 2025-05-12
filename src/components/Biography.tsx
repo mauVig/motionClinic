@@ -66,7 +66,7 @@ const Biography: React.FC = () => {
             </a>
             <a href='https://cartilage.org/' target='_blank' rel='noreferrer' className='flex flex-col items-center text-center transition-all duration-700 hover:scale-125 '>
               <img src="svg/acreditaciones-02.svg" className='h-28 block mx-auto'  alt="cartilage" />
-              <p className="whitespace-pre-line">{myLang ? 'Miembro\n Internacional' : 'International \n Member'}</p>
+              <p className="whitespace-pre-line">{myLang ? 'International \n Member' : 'Miembro\n Internacional' }</p>
             </a>
            </div>
          </div>

@@ -1,4 +1,4 @@
-import React, { use, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useStore } from "@/store/storeGlobal.ts";
 import emailjs from '@emailjs/browser';
 
@@ -98,7 +98,6 @@ const ContactForm: React.FC = () => {
                   setIsSubmitted(false);
                 },
             );
-
 
         } else {
             console.error('Formulario inválido');

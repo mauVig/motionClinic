@@ -23,17 +23,17 @@ const Footer: React.FC = () => {
         </div>
         <div className="flex justify-between w-44">
           <div className="flex items-end text-sm">
-            <a href="https://www.linkedin.com/in/andres-anania?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Linkedin</a>
+            <a target='_blank' href="https://www.linkedin.com/in/andres-anania?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Linkedin</a>
           </div>
           <div className="flex items-end text-sm">
-            <a href="https://www.instagram.com/motionclinic.ba?igsh=MTZzZzF4NXZpMDQzcQ%3D%3D&utm_source=qr">Instagram</a>
+            <a target='_blank' href="https://www.instagram.com/motionclinic.ba?igsh=MTZzZzF4NXZpMDQzcQ%3D%3D&utm_source=qr">Instagram</a>
           </div>
         </div>
         <div>
           <button className="px-8 xl:px-24 py-2 bg-grey text-black rounded-full text-2xl truncate buttom" onClick={myFocus}>LET´S TALK</button>
         </div>
       </div>
-      <style >{`
+      <style>{`
         .buttom {
           box-shadow: inset -1px 2px 5px 5px rgba(0, 0, 0, 0.45);
           transition: all 0.8s;
